@@ -44,10 +44,6 @@ It translates to this handy GraphQL query:
 
 This data comes from [Detroit's open data portal](https://data.detroitmi.gov/browse?q=restaurants).
 
-## Styling
-
-Customizable [Semantic UI](https://github.com/pretzelhands/gatsby-starter-semantic-ui) coming soon
-
 ## Develop
 
 Install Gatsby CLI globally: `npm install --global gatsby-cli`
@@ -61,8 +57,17 @@ PG_CONN=postgres://{user}:{password}@{host}:{port}/{dbname}
 
 `gatsby develop` starts the development server and GraphiQL, an in-browser IDE for our site's data
 
+## Styling
+
+We're using React Semantic UI with Less. 
+
+Customize Semantic UI by editing files in `src/semantic/site`. This [Customization Guide](http://learnsemantic.com/developing/customizing.html) explains that file structure.
+
+This [starter]((https://github.com/pretzelhands/gatsby-starter-semantic-ui)) was a helpful guide.
+
 ## Helpful links
 
 - [Gatsby documentation](https://www.gatsbyjs.org/)
 - [gatsby-source-pg plugin](https://www.gatsbyjs.org/packages/gatsby-source-pg/)
 - [PostGraphile documentation](https://www.graphile.org/postgraphile/)
+- [React Semantic UI](https://react.semantic-ui.com/)

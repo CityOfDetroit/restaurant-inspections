@@ -27,3 +27,13 @@ exports.createPages = async ({ graphql, actions: { createPage }}) => {
     })
   })
 }
+
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        '../../theme.config$': path.join(__dirname, 'src/semantic/theme.config'),
+      },
+    },
+  })
+}
