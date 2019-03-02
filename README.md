@@ -8,7 +8,7 @@ Built with Gatsby, a static-site generator for React & GraphQL.
 
 We're using the `gatsby-source-pg` plugin to query data from PostgreSQL. Find a database dump in `src/data/restaurants.sql.bz2`.
 
-Assuming you have PostgreSQL installed locally, load it from your shell:
+Assuming you have PostgreSQL installed locally, import the db dump from your shell:
 ```bash
 createdb restaurants
 psql -d restaurants -c 'create extension postgis'
@@ -16,7 +16,7 @@ bunzip2 restaurants.sql.bz2
 psql -d restaurants < restaurants.sql
 ```
 
-You'll find three tables in the `public` schema: `establishments`, `inspections` and `violations`. An establishment can have many inspections, and an inspection can have many violations. Following the [Postgraphile docs](https://www.graphile.org/postgraphile/introduction/), we've pre-defined indexes, foreign key constraints, and one Postgres function in our database. 
+You'll find three tables in the `public` schema: `establishments`, `inspections` and `violations`. An establishment can have many inspections, and an inspection can have many violations. Following the [PostGraphile docs](https://www.graphile.org/postgraphile/introduction/), we've pre-defined indexes, foreign key constraints, and one postgres function in our database. 
 
 Here's a copy of that function; it queries restaurants on name and returns a list:
 ```psql
@@ -61,9 +61,9 @@ PG_CONN=postgres://{user}:{password}@{host}:{port}/{dbname}
 
 We're using React Semantic UI with Less. 
 
-Customize Semantic UI by editing files in `src/semantic/site`. This [Customization Guide](http://learnsemantic.com/developing/customizing.html) explains that file structure.
+Customize Semantic UI by editing files in `src/semantic/site`. This [customization guide](http://learnsemantic.com/developing/customizing.html) explains that file structure.
 
-This [starter]((https://github.com/pretzelhands/gatsby-starter-semantic-ui)) was a helpful guide.
+This [starter](https://github.com/pretzelhands/gatsby-starter-semantic-ui) was a helpful guide.
 
 ## Helpful links
 
