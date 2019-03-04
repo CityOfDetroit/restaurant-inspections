@@ -20,13 +20,9 @@ import metadata from "../data/metadata"
 export default ({ data }) => {
   const e = data.postgres.establishment[0]
 
-  let geojson = e.geojson
-  geojson["properties"]["marker-symbol"] = "bus"
-  console.log(geojson)
-
   let json = {
     type: "Feature",
-    geometry: geojson.geometry,
+    geometry: e.geojson.geometry,
     properties: {
       description: "this",
       "marker-symbol": "restaurant",
@@ -34,7 +30,6 @@ export default ({ data }) => {
       "fill-opacity": 0.8,
     },
   }
-  console.log(json)
   let encoded = encodeURIComponent(JSON.stringify(json))
 
   return (
@@ -114,6 +109,23 @@ export default ({ data }) => {
       </Container>
       <Divider />
       <Container fluid>
+        <Header as="h3">
+          {e.inspectionsByEstablishmentidList.length} Inspections
+          <Header.Subheader>Since 8-1-2016</Header.Subheader>
+        </Header>
+        <Inspection data={e.inspectionsByEstablishmentidList} />
+        <Message visible size="small">
+          <Message.Header>About this data</Message.Header>A restaurant is{" "}
+          <strong>compliant</strong> <Icon name="check" color="green" />
+          when zero Priority or Priority Foundation violations are found during
+          an inspection or when all Priority and Priority Foundation violations
+          are corrected; Core violations are not required to be corrected. To
+          learn more about individual violations cited, reference Michigan's
+          Food Code <a href={metadata.foodCodeLink}>here</a>.
+        </Message>
+      </Container>
+      <Divider />
+      <Container fluid>
         <Header as="h3">Location</Header>
         <Grid columns={2} stackable textAlign="center">
           <Grid.Row>
@@ -144,23 +156,6 @@ export default ({ data }) => {
             </Grid.Column>
           </Grid.Row>
         </Grid>
-      </Container>
-      <Divider />
-      <Container fluid>
-        <Header as="h3">
-          {e.inspectionsByEstablishmentidList.length} Inspections
-          <Header.Subheader>Since 8-1-2016</Header.Subheader>
-        </Header>
-        <Inspection data={e.inspectionsByEstablishmentidList} />
-        <Message visible size="small">
-          <Message.Header>About this data</Message.Header>A restaurant is{" "}
-          <strong>compliant</strong> <Icon name="check" color="green" />
-          when zero Priority or Priority Foundation violations are found during
-          an inspection or when all Priority and Priority Foundation violations
-          are corrected; Core violations are not required to be corrected. To
-          learn more about individual violations cited, reference Michigan's
-          Food Code <a href={metadata.foodCodeLink}>here</a>.
-        </Message>
       </Container>
     </Layout>
   )
