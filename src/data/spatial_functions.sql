@@ -1,5 +1,5 @@
 create
-or replace function establishments_nearby (o establishments) returns setof establishments as $ $
+or replace function establishments_nearby (o establishments) returns setof establishments as $$
 select
   e.*
 from
@@ -9,18 +9,18 @@ where
   and e.geom is not null
   and o.geom is not null
 order by
-  o.geom < -> e.geom asc
+  o.geom <-> e.geom asc
 limit
-  10 $ $ language sql stable;
+  10 $$ language sql stable;
 
 CREATE
-OR REPLACE FUNCTION establishments_coords(e establishments) RETURNS text AS $ $
+OR REPLACE FUNCTION establishments_coords(e establishments) RETURNS text AS $$
 SELECT
   concat_ws(
     ',',
     round(st_x(e.geom) :: numeric, 5),
     round(st_y(e.geom) :: numeric, 5)
-  ) $ $ LANGUAGE sql STABLE;
+  ) $$ LANGUAGE sql STABLE;
 
 CREATE OR REPLACE FUNCTION establishments_geojson(e establishments) RETURNS jsonb AS $$
 SELECT jsonb_build_object(
