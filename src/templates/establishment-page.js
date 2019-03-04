@@ -42,7 +42,6 @@ export default ({ data }) => {
       <Header as="h2">
         {e.name}
         <Header.Subheader>{e.address}</Header.Subheader>
-        <Header.Subheader>{e.coords}</Header.Subheader>
       </Header>
       <Container fluid>
         <Header as="h3">{e.establishmentType}</Header>
@@ -122,15 +121,15 @@ export default ({ data }) => {
               <Image
                 rounded
                 floated="right"
-                src={`https://api.mapbox.com/styles/v1/jayarem/cjsulkm623lt61fo0sxssg3xf/static/geojson(${encoded})/${
+                src={`https://api.mapbox.com/styles/v1/jmcbroom/cjsunv74q0t5a1fmo902wmiq0/static/geojson(${encoded})/${
                   e.coords
-                },16.5,0,0/400x250?access_token=pk.eyJ1IjoiamF5YXJlbSIsImEiOiIySy1JZEg0In0.miYH5WbQqmrF_97xiAaFsg`}
+                },15.9,0,0/400x300@2x?access_token=pk.eyJ1Ijoiam1jYnJvb20iLCJhIjoianRuR3B1NCJ9.cePohSx5Od4SJhMVjFuCQA`}
               />
             </Grid.Column>
 
             <Grid.Column textAlign="left">
               <Header as="h4">Nearby</Header>
-              <List link>
+              <List link size="large">
                 {e.nearbyList.map(i => (
                   <List.Item
                     as="a"
