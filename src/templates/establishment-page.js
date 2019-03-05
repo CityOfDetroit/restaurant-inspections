@@ -136,14 +136,12 @@ export default ({ data }) => {
                 style={{ height: 275, overflowY: "scroll" }}
               >
                 {e.nearbyList.map(i => (
-                  <List.Item
-                    as="a"
-                    key={i.establishmentid}
-                    href={`/establishment/${i.establishmentid}`}
-                  >
+                  <List.Item key={i.establishmentid}>
                     <List.Content>
-                      <List.Header>{i.name}</List.Header>
-                      <List.Description>{i.address}</List.Description>
+                      <Link to={`/establishment/${i.establishmentid}`}>
+                        <List.Header>{i.name}</List.Header>
+                        <List.Description>{i.address}</List.Description>
+                      </Link>
                     </List.Content>
                   </List.Item>
                 ))}
@@ -175,6 +173,9 @@ export default ({ data }) => {
 
 export const query = graphql`
   query($eid: String!) {
+    site {
+      pathPrefix
+    }
     postgres {
       establishment: allEstablishmentsList(
         condition: { establishmentid: $eid }
