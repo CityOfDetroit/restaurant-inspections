@@ -36,6 +36,7 @@ module.exports = {
       options: {
         connectionString: process.env.PG_CONN,
         schema: `public`,
+        appendPlugins: [require("postgraphile-plugin-connection-filter")],
       },
     },
     `gatsby-plugin-less`,

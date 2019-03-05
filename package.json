@@ -17,6 +17,7 @@
     "gatsby-source-pg": "^0.1.2",
     "gatsby-transformer-sharp": "^2.1.15",
     "less": "^3.9.0",
+    "postgraphile-plugin-connection-filter": "^1.0.0-beta.29",
     "prop-types": "^15.7.2",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",

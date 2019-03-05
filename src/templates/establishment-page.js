@@ -20,11 +20,11 @@ import metadata from "../data/metadata"
 export default ({ data }) => {
   const e = data.postgres.establishment[0]
 
+  // make geojson and encode for use in Mapbox Static API
   let json = {
     type: "Feature",
     geometry: e.geojson.geometry,
     properties: {
-      description: "this",
       "marker-symbol": "restaurant",
       "marker-color": "#ace",
       "fill-opacity": 0.8,
@@ -109,6 +109,51 @@ export default ({ data }) => {
       </Container>
       <Divider />
       <Container fluid>
+        <Grid columns={2} stackable>
+          <Grid.Row>
+            <Grid.Column>
+              <Header as="h4">
+                {e.address}, Detroit, MI, {e.zipcode}
+              </Header>
+              <Image
+                rounded
+                bordered
+                floated="right"
+                src={`https://api.mapbox.com/styles/v1/jmcbroom/cjsunv74q0t5a1fmo902wmiq0/static/geojson(${encoded})/${
+                  e.coords
+                },16,0,0/400x250@2x?access_token=pk.eyJ1Ijoiam1jYnJvb20iLCJhIjoianRuR3B1NCJ9.cePohSx5Od4SJhMVjFuCQA`}
+              />
+            </Grid.Column>
+
+            <Grid.Column textAlign="left">
+              <Header as="h4">Nearby</Header>
+              <List
+                link
+                divided
+                relaxed
+                bordered
+                size="large"
+                style={{ height: 275, overflowY: "scroll" }}
+              >
+                {e.nearbyList.map(i => (
+                  <List.Item
+                    as="a"
+                    key={i.establishmentid}
+                    href={`./${i.establishmentid}`}
+                  >
+                    <List.Content>
+                      <List.Header>{i.name}</List.Header>
+                      <List.Description>{i.address}</List.Description>
+                    </List.Content>
+                  </List.Item>
+                ))}
+              </List>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      </Container>
+      <Divider />
+      <Container fluid>
         <Header as="h3">
           {e.inspectionsByEstablishmentidList.length} Inspections
           <Header.Subheader>Since 8-1-2016</Header.Subheader>
@@ -124,39 +169,6 @@ export default ({ data }) => {
           Food Code <a href={metadata.foodCodeLink}>here</a>.
         </Message>
       </Container>
-      <Divider />
-      <Container fluid>
-        <Header as="h3">Location</Header>
-        <Grid columns={2} stackable textAlign="center">
-          <Grid.Row>
-            <Grid.Column>
-              <Image
-                rounded
-                floated="right"
-                src={`https://api.mapbox.com/styles/v1/jmcbroom/cjsunv74q0t5a1fmo902wmiq0/static/geojson(${encoded})/${
-                  e.coords
-                },15.9,0,0/400x300@2x?access_token=pk.eyJ1Ijoiam1jYnJvb20iLCJhIjoianRuR3B1NCJ9.cePohSx5Od4SJhMVjFuCQA`}
-              />
-            </Grid.Column>
-
-            <Grid.Column textAlign="left">
-              <Header as="h4">Nearby</Header>
-              <List link size="large">
-                {e.nearbyList.map(i => (
-                  <List.Item
-                    as="a"
-                    key={i.establishmentid}
-                    href={`./${i.establishmentid}`}
-                  >
-                    <List.Content>{i.name}</List.Content>
-                    <List.Description>{i.address}</List.Description>
-                  </List.Item>
-                ))}
-              </List>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </Container>
     </Layout>
   )
 }
@@ -170,6 +182,7 @@ export const query = graphql`
         establishmentid
         name
         address
+        zipcode
         owner
         licenseNumber
         licenseType
@@ -179,10 +192,11 @@ export const query = graphql`
         reviewFrequencyDays
         coords
         geojson
-        nearbyList(first: 5) {
+        nearbyList(first: 20) {
           establishmentid
           name
           address
+          zipcode
         }
         inspectionsByEstablishmentidList {
           inspectionid
