@@ -1,0 +1,1 @@
+{"errors":[{"message":"relation \"establishments\" does not exist","locations":[{"line":5,"column":5}],"path":["postgres","establishment"]}],"data":{"postgres":{"establishment":null}},"pageContext":{"eid":"4224"}}
