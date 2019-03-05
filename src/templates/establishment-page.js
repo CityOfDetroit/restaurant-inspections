@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import {
   Header,
   Container,
@@ -38,6 +38,7 @@ export default ({ data }) => {
         {e.name}
         <Header.Subheader>{e.address}</Header.Subheader>
       </Header>
+      <Divider />
       <Container fluid>
         <Header as="h3">{e.establishmentType}</Header>
         <Table basic="very" celled striped>
@@ -54,13 +55,13 @@ export default ({ data }) => {
             </Table.Row>
             <Table.Row>
               <Table.Cell>
-                <strong>License Type</strong>
+                <strong>License type</strong>
               </Table.Cell>
               <Table.Cell>{e.licenseType}</Table.Cell>
             </Table.Row>
             <Table.Row>
               <Table.Cell>
-                <strong>State License Number</strong>
+                <strong>State license number</strong>
               </Table.Cell>
               <Table.Cell>{e.licenseNumber}</Table.Cell>
             </Table.Row>
@@ -124,7 +125,6 @@ export default ({ data }) => {
                 },16,0,0/400x250@2x?access_token=pk.eyJ1Ijoiam1jYnJvb20iLCJhIjoianRuR3B1NCJ9.cePohSx5Od4SJhMVjFuCQA`}
               />
             </Grid.Column>
-
             <Grid.Column textAlign="left">
               <Header as="h4">Nearby</Header>
               <List

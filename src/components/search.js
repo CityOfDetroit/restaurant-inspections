@@ -1,6 +1,6 @@
 import _ from 'lodash'
 import React, { Component } from 'react'
-import { Link } from "gatsby"
+import { Link } from 'gatsby'
 import { Search, List } from 'semantic-ui-react'
 
 class SearchEstablishments extends Component {
@@ -35,7 +35,7 @@ class SearchEstablishments extends Component {
       <List.Item key={establishmentid}>
         <List.Content>
           <Link to={`/establishment/${establishmentid}`}>
-            <List.Header>{name}</List.Header>
+            <List.Header style={{ fontWeight: 700 }}>{name}</List.Header>
             <List.Description>{address}</List.Description>
           </Link>
         </List.Content>
@@ -46,7 +46,7 @@ class SearchEstablishments extends Component {
       <Search
         fluid
         size='large'
-        placeholder="Search restaurants by name..."
+        placeholder="Search by name..."
         loading={isLoading}
         onResultSelect={this.handleResultSelect}
         onSearchChange={_.debounce(this.handleSearchChange, 500, { leading: true })}
@@ -59,4 +59,4 @@ class SearchEstablishments extends Component {
   }
 }
 
-export default SearchEstablishments;
+export default SearchEstablishments

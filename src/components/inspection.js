@@ -42,9 +42,7 @@ class Inspection extends Component {
                 <Table.Body>
                   <Table.Row className={e.inCompliance === "Yes" ? 'positive' : e.inCompliance === "No" ? 'negative' : ''}>
                     <Table.Cell>
-                      <span style={{ marginLeft: '.5em' }}>
-                        <strong>Outcome</strong>
-                      </span>
+                      <strong>Outcome</strong>
                     </Table.Cell>
                     <Table.Cell>
                       {e.inCompliance === "Yes" ? "Compliant" : e.inCompliance === "No" ? "Not compliant" : e.inCompliance}
