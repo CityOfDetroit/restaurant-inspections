@@ -139,7 +139,7 @@ export default ({ data }) => {
                   <List.Item
                     as="a"
                     key={i.establishmentid}
-                    href={`./${i.establishmentid}`}
+                    href={`/establishment/${i.establishmentid}`}
                   >
                     <List.Content>
                       <List.Header>{i.name}</List.Header>
