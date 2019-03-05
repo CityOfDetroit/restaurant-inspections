@@ -62,13 +62,17 @@ PG_CONN=postgres://{user}:{password}@{host}:{port}/{dbname}
 
 `gatsby develop` starts the development server and GraphiQL, an in-browser IDE for our site's data
 
+### Deploy
+
+Run `yarn deploy` from the master branch to deploy to `gh-pages`
+
 ## Styling
 
 We're using React Semantic UI with Less.
 
 Customize Semantic UI by editing files in `src/semantic/site`. This [customization guide](http://learnsemantic.com/developing/customizing.html) explains that file structure.
 
-This [starter](https://github.com/pretzelhands/gatsby-starter-semantic-ui) was a helpful guide.
+This [starter](https://github.com/pretzelhands/gatsby-starter-semantic-ui) was a helpful guide for installation.
 
 ## Helpful links
 

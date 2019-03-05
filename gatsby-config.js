@@ -8,6 +8,7 @@ module.exports = {
     description: `Search restaurant inspections open data from the Detroit Health Department.`,
     author: `IET`,
   },
+  pathPrefix: "/restaurant-inspections",
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
