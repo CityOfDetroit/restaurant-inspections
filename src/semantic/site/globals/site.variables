@@ -233,6 +233,10 @@
 @brown            : #A5673F;
 @grey             : #767676;
 @black            : #1B1C1D;
+@cityGreen        : #004445;
+@spiritGreen      : #279989;
+@paleGreen        : #9FD5B3;
+@accentYellow     : #FEB70D;
 
 /*---  Light Colors  ---*/
 @lightRed         : #FF695E;
@@ -283,17 +287,21 @@
 @brownHeaderColor  : darken(@brownTextColor, 5);
 
 /*--- Colored Text ---*/
-@redTextColor    : @red;
-@orangeTextColor : @orange;
-@yellowTextColor : #B58105; // Yellow text is difficult to read
-@oliveTextColor  : #8ABC1E; // Olive is difficult to read
-@greenTextColor  : #1EBC30; // Green is difficult to read
-@tealTextColor   : #10A3A3; // Teal text is difficult to read
-@blueTextColor   : @blue;
-@violetTextColor : @violet;
-@purpleTextColor : @purple;
-@pinkTextColor   : @pink;
-@brownTextColor  : @brown;
+@redTextColor           : @red;
+@orangeTextColor        : @orange;
+@yellowTextColor        : #B58105; // Yellow text is difficult to read
+@oliveTextColor         : #8ABC1E; // Olive is difficult to read
+@greenTextColor         : #1EBC30; // Green is difficult to read
+@tealTextColor          : #10A3A3; // Teal text is difficult to read
+@blueTextColor          : @blue;
+@violetTextColor        : @violet;
+@purpleTextColor        : @purple;
+@pinkTextColor          : @pink;
+@brownTextColor         : @brown;
+@cityGreenTextColor     : @cityGreen;
+@spiritGreenTextColor   : @spiritGreen;
+@paleGreenTextColor     : @paleGreen;
+@accentYellowTextColor  : @accentYellow;
 
 /*--- Colored Border ---*/
 @redBorderColor    : @redTextColor;

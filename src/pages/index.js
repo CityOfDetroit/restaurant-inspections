@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Container } from "semantic-ui-react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
