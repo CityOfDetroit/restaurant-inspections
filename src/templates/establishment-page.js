@@ -1,21 +1,11 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
-import {
-  Header,
-  Container,
-  Table,
-  Divider,
-  Icon,
-  Message,
-  Popup,
-  List,
-  Image,
-  Grid,
-} from "semantic-ui-react"
+import { graphql } from "gatsby"
+import { Header, Container, Divider, Icon, Message } from "semantic-ui-react"
 
 import Inspection from "../components/inspection"
 import Layout from "../components/layout"
-import metadata from "../data/metadata"
+import Location from "../components/location"
+import Establishment from "../components/establishment";
 
 export default ({ data }) => {
   const e = data.postgres.establishment[0]
@@ -38,118 +28,13 @@ export default ({ data }) => {
         {e.name}
         <Header.Subheader>{e.address}</Header.Subheader>
       </Header>
+      
       <Divider />
       <Container fluid>
         <Header as="h3">{e.establishmentType}</Header>
-        <Table basic="very" celled striped>
-          <Table.Body>
-            <Table.Row
-              className={e.establishmentStatus === "Open" ? "positive" : ""}
-            >
-              <Table.Cell>
-                <strong>Status</strong>
-              </Table.Cell>
-              <Table.Cell>
-                {!e.establishmentStatus ? "Unknown" : e.establishmentStatus}
-              </Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.Cell>
-                <strong>License type</strong>
-              </Table.Cell>
-              <Table.Cell>{e.licenseType}</Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.Cell>
-                <strong>State license number</strong>
-              </Table.Cell>
-              <Table.Cell>{e.licenseNumber}</Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.Cell>
-                <strong>Owner</strong>
-              </Table.Cell>
-              <Table.Cell>{e.owner}</Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.Cell>
-                <strong>Complexity level</strong>
-              </Table.Cell>
-              <Table.Cell>
-                {!e.riskCategory ? "Unknown" : e.riskCategory}
-                <span style={{ marginLeft: ".5em" }}>
-                  <Popup
-                    wide
-                    size="tiny"
-                    trigger={
-                      <Icon
-                        circular
-                        name="question"
-                        size="small"
-                        color="grey"
-                      />
-                    }
-                  >
-                    {metadata.risks[`${e.riskCategory}`]}
-                  </Popup>
-                </span>
-              </Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.Cell>
-                <strong>Review frequency</strong>
-              </Table.Cell>
-              <Table.Cell>
-                {Math.round(e.reviewFrequencyDays) === 0
-                  ? `Unknown`
-                  : `Every ${Math.round(e.reviewFrequencyDays)} days`}
-              </Table.Cell>
-            </Table.Row>
-          </Table.Body>
-        </Table>
+        <Establishment e={e} />
       </Container>
-      <Divider />
-      <Container fluid>
-        <Grid columns={2} stackable>
-          <Grid.Row>
-            <Grid.Column>
-              <Header as="h4">
-                {e.address}, Detroit, MI, {e.zipcode}
-              </Header>
-              <Image
-                rounded
-                bordered
-                floated="right"
-                src={`https://api.mapbox.com/styles/v1/jmcbroom/cjsunv74q0t5a1fmo902wmiq0/static/geojson(${encoded})/${
-                  e.coords
-                },16,0,0/400x250@2x?access_token=pk.eyJ1Ijoiam1jYnJvb20iLCJhIjoianRuR3B1NCJ9.cePohSx5Od4SJhMVjFuCQA`}
-              />
-            </Grid.Column>
-            <Grid.Column textAlign="left">
-              <Header as="h4">Nearby</Header>
-              <List
-                link
-                divided
-                relaxed
-                bordered
-                size="large"
-                style={{ height: 275, overflowY: "scroll" }}
-              >
-                {e.nearbyList.map(i => (
-                  <List.Item key={i.establishmentid}>
-                    <List.Content>
-                      <Link to={`/establishment/${i.establishmentid}`}>
-                        <List.Header>{i.name}</List.Header>
-                        <List.Description>{i.address}</List.Description>
-                      </Link>
-                    </List.Content>
-                  </List.Item>
-                ))}
-              </List>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </Container>
+      
       <Divider />
       <Container fluid>
         <Header as="h3">
@@ -158,14 +43,17 @@ export default ({ data }) => {
         </Header>
         <Inspection data={e.inspectionsByEstablishmentidList} />
         <Message visible size="small">
-          <Message.Header>About this data</Message.Header>A restaurant is{" "}
+          <Message.Header>About inspections</Message.Header>A restaurant is{" "}
           <strong>compliant</strong> <Icon name="check" color="green" />
           when zero Priority or Priority Foundation violations are found during
-          an inspection or when all Priority and Priority Foundation violations
-          are corrected; Core violations are not required to be corrected. To
-          learn more about individual violations cited, reference Michigan's
-          Food Code <a href={metadata.foodCodeLink}>here</a>.
+          an inspection or when all P and PF violations
+          are corrected; Core violations are not required to be corrected.
         </Message>
+      </Container>
+
+      {e.coords ? <Divider /> : ''}
+      <Container fluid>
+        {e.coords ? <Location e={e} encoded={encoded} /> : ''}
       </Container>
     </Layout>
   )

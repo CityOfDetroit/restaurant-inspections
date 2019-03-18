@@ -35,7 +35,7 @@ class SearchEstablishments extends Component {
       <List.Item key={establishmentid}>
         <List.Content>
           <Link to={`/establishment/${establishmentid}`}>
-            <List.Header style={{ fontWeight: 700 }}>{name}</List.Header>
+            <List.Header as='a' style={{ fontWeight: 700 }}>{name}</List.Header>
             <List.Description>{address}</List.Description>
           </Link>
         </List.Content>
@@ -44,6 +44,7 @@ class SearchEstablishments extends Component {
 
     return (
       <Search
+        input={{ fluid: true }}
         fluid
         size='large'
         placeholder="Search by name..."
