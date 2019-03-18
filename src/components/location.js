@@ -23,7 +23,7 @@ const Location = ({ e, encoded }) => (
           link
           divided
           relaxed
-          bordered
+          bordered="true"
           size="large"
           style={{ height: 275, overflowY: "scroll" }}
         >
