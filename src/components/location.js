@@ -31,8 +31,8 @@ const Location = ({ e, encoded }) => (
             <List.Item key={i.establishmentid}>
               <List.Content>
                 <Link to={`/establishment/${i.establishmentid}`}>
-                  <List.Header>{i.name}</List.Header>
-                  <List.Description>{i.address}</List.Description>
+                  <List.Header as='a'>{i.name}</List.Header>
+                  <List.Description style={{ color: 'rgba(0, 0, 0, 0.6)' }}>{i.address}</List.Description>
                 </Link>
               </List.Content>
             </List.Item>

@@ -11,15 +11,10 @@ const IndexPage = ({ data }) => {
       <SEO title="Home" keywords={[`restaurant`, `inspections`, `detroit`]} />
       <section style={{ fontSize: '1.25em', marginBottom: '1.5em' }}>
         <p>
-          Explore information about restaurant inspections made available through Detroit's open data portal.
-        </p>
-        <p>
-          This data includes restaurants and other food service establishments, like school cafeterias or stadium concessions, that are inspected by the Detroit Health Department.
+          Explore information about restaurant inspections from the Detroit Heatlh Department.
         </p>
       </section>
-      <section style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
-        <SearchEstablishments source={data.postgres.establishments} />
-      </section>
+      <SearchEstablishments source={data.postgres.establishments} />
     </Layout>
   )
 }
