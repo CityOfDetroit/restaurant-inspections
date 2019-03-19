@@ -5,7 +5,8 @@ import { Header, Container, Divider, Icon, Message } from "semantic-ui-react"
 import Inspection from "../components/inspection"
 import Layout from "../components/layout"
 import Location from "../components/location"
-import Establishment from "../components/establishment";
+import Establishment from "../components/establishment"
+import SEO from "../components/seo"
 
 export default ({ data }) => {
   const e = data.postgres.establishment[0]
@@ -24,6 +25,8 @@ export default ({ data }) => {
 
   return (
     <Layout>
+      <SEO title={e.name} />
+
       <Header as="h2">
         {e.name}
         <Header.Subheader>{e.address}</Header.Subheader>

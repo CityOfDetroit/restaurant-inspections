@@ -1,23 +1,19 @@
-import React from 'react';
-import _ from 'lodash';
-import { format } from 'date-fns';
-import { Item, Label, Icon, Popup, Header } from 'semantic-ui-react';
+import React from 'react'
+import _ from 'lodash'
+import { format } from 'date-fns'
+import { Item, Label, Icon, Header } from 'semantic-ui-react'
+
+import ViolationExpanded from './violation_expanded'
 
 const Violation = ({ data }) => {
+  let summary = `${data.itemDescription} ${_.lowerCase(data.subItem)} ${_.lowerCase(data.problemDescription)} ${_.lowerCase(data.subProblem)}`
+  let fallback = `Expand for full food code definition`
+
   return (
     <Item>
       <Item.Content>
         <Header as='h5'>Code {data.violationCode}</Header>
-        <Item.Meta>
-          {data.itemDescription} {_.lowerCase(data.subItem)} {_.lowerCase(data.problemDescription)} {_.lowerCase(data.subProblem)}
-          <Popup 
-            wide 
-            size='tiny' 
-            trigger={<Icon circular name='plus' size='small' color='grey' />} 
-            header='Full food code definition:' 
-            content={data.violationDescription}
-          />
-        </Item.Meta>
+        <ViolationExpanded summary={summary.trim()} fallback={fallback} vioDesc={data.violationDescription} />
         <Item.Extra>
           <Label color={data.violationType === "Priority" ? 'red' : data.violationType === "Foundation" ? 'orange' : 'yellow'}>
             {data.violationType === "Foundation" ? "Priority Foundation" : data.violationType}
@@ -29,7 +25,7 @@ const Violation = ({ data }) => {
         </Item.Extra>
       </Item.Content>
     </Item>
-  );
+  )
 }
 
-export default Violation;
+export default Violation
