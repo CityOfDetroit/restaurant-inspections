@@ -14,6 +14,7 @@ const Location = ({ e, encoded }) => (
           rounded
           bordered
           floated="right"
+          alt="map of establishment"
           src={`https://api.mapbox.com/styles/v1/jmcbroom/cjsunv74q0t5a1fmo902wmiq0/static/geojson(${encoded})/${e.coords},16,0,0/400x250@2x?access_token=pk.eyJ1Ijoiam1jYnJvb20iLCJhIjoianRuR3B1NCJ9.cePohSx5Od4SJhMVjFuCQA`}
         />
       </Grid.Column>

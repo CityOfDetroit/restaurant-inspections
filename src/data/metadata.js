@@ -34,7 +34,11 @@ const metadata = {
     "faqs": [
       {
         question: "Are restaurants assigned grades?",
-        answer: "No, the Detroit Health Department does not assign grades or scores to establishments based on their inspection outcomes. This practice is consistent across the state of Michigan; no municipal health departments utilize a grading system. Instead, an inspection is marked as compliant or not compliant based on the types of violations cited and whether or not they were corrected."
+        answer: "No, the Detroit Health Department does not assign grades or scores to establishments based on their inspection outcomes. This practice is consistent across the state of Michigan; no municipal health departments currently utilize a grading system. Instead, an inspection is marked as compliant or not compliant based on the types of violations cited and whether or not they were corrected."
+      },
+      {
+        question: "What does complexity level mean for establishments?",
+        answer: "Complexity level is based on an establishment's food preparation; more complex food preparation increases risk and results in a more frequent review schedule. Possible values are High, Medium, and Low. This is a new field that is in the process of being updated by the Detroit Health Department, so some values may still appear null or unknown until the next review cycle."
       },
       {
         question: "I searched for a bakery that I know is in Detroit and open for business, but I don't see it included here?",
@@ -46,7 +50,7 @@ const metadata = {
       },
       {
         question: "How often are these data updated?",
-        answer: "Restaurant inspections data is updated monthly on the last day of the month and includes data through the last full month. For example, on March 31, the data will be updated to reflect inspections through February 28. This allows food safety inspectors to verify their reports and follow up about corrections."
+        answer: "Restaurant inspections data is updated monthly on the last day of the month and includes data through the last full month. For example, on March 31, the data will be updated to reflect inspections through February 28. This allows food safety inspectors time to verify their reports and follow up about corrections."
       },
       {
         question: "How can I access the raw data?",

@@ -30,7 +30,7 @@ class FAQ extends Component {
               <Icon name='dropdown' />
             </Accordion.Title>
             <Accordion.Content active={activeIndex === i}>
-              {f.answer}
+              <span style={{ color: 'rgba(0, 0, 0, 0.6)'}}>{f.answer}</span>
             </Accordion.Content>
           </div>
         ))}
