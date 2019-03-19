@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { format } from 'date-fns';
-import { Accordion, Icon, Header, Popup, Item, Table } from 'semantic-ui-react';
+import { Accordion, Icon, Header, Popup, Segment, Table } from 'semantic-ui-react';
 
 import Violation from './violation';
 import metadata from '../data/metadata';
@@ -28,7 +28,7 @@ class Inspection extends Component {
         {this.props.data.map((e, i) => (
           <div key={i}>
             <Accordion.Title active={activeIndex === i} index={i} onClick={this.handleClick} style={{ display: 'flex', flexDirection: 'vertical', justifyContent: 'space-between', alignItems: 'center' }}>
-              <Header as='h4'>
+              <Header as='h3'>
                 {format(e.inspectionDate, 'M-D-YYYY')}
                 <Header.Subheader>
                   {e.inspectionType + ' '}
@@ -38,7 +38,7 @@ class Inspection extends Component {
               <Icon name='dropdown' />
             </Accordion.Title>
             <Accordion.Content active={activeIndex === i}>
-              <Table basic='very' celled>
+              <Table basic='very' celled compact>
                 <Table.Body>
                   <Table.Row className={e.inCompliance === "Yes" ? 'positive' : e.inCompliance === "No" ? 'negative' : ''}>
                     <Table.Cell>
@@ -59,11 +59,11 @@ class Inspection extends Component {
                 {e.violationsByInspectionidList.length} {e.violationsByInspectionidList.length === 1 ? 'violation' : 'violations'} cited {e.violationsByInspectionidList.length > 0 ? ':' : null}
               </Header>
               {e.violationsByInspectionidList.length > 0 ? 
-                <Item.Group divided verticalAlign='middle'>
+                <Segment.Group divided verticalAlign='middle'>
                   {e.violationsByInspectionidList.map((e, i) => (
                     <Violation data={e} key={i} />
                   ))}
-                </Item.Group>
+                </Segment.Group>
               : `` }
             </Accordion.Content>
           </div>

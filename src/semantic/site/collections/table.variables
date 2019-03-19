@@ -6,7 +6,7 @@
        Element
 --------------------*/
 
-@verticalMargin: 1em;
+@verticalMargin: 0em;
 @horizontalMargin: 0em;
 @margin: @verticalMargin @horizontalMargin;
 @borderCollapse: separate;

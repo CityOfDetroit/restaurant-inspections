@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Header, Container, Divider, Icon, Message } from "semantic-ui-react"
+import { Header, Divider, Icon, Message } from "semantic-ui-react"
 
 import Inspection from "../components/inspection"
 import Layout from "../components/layout"
@@ -33,13 +33,10 @@ export default ({ data }) => {
       </Header>
       
       <Divider />
-      <Container fluid>
-        <Header as="h3">{e.establishmentType}</Header>
-        <Establishment e={e} />
-      </Container>
-      
+      <Header as="h3">{e.establishmentType}</Header>
+      <Establishment e={e} />
+    
       <Divider />
-      <Container fluid>
         <Header as="h3">
           {e.inspectionsByEstablishmentidList.length} Inspections
           <Header.Subheader>Since 8-1-2016</Header.Subheader>
@@ -52,12 +49,8 @@ export default ({ data }) => {
           an inspection or when all P and PF violations
           are corrected; Core violations are not required to be corrected.
         </Message>
-      </Container>
 
-      {e.coords ? <Divider /> : ''}
-      <Container fluid>
-        {e.coords ? <Location e={e} encoded={encoded} /> : ''}
-      </Container>
+      {e.coords ? <><Divider /><Location e={e} encoded={encoded} /></> : ''}
     </Layout>
   )
 }
