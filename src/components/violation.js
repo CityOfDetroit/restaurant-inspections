@@ -16,13 +16,13 @@ const Violation = ({ data }) => {
         <ViolationExpanded summary={summary.trim()} fallback={fallback} vioDesc={data.violationDescription} />
         <Item.Extra style={{paddingTop: 10}}>
           <Popup trigger={(<Label color={data.violationType === "Priority" ? 'red' : data.violationType === "Foundation" ? 'orange' : 'yellow'}>
-            {data.violationType === "Foundation" ? "Priority Foundation".toUpperCase() : data.violationType}
+            {data.violationType === "Foundation" ? "Priority Foundation" : data.violationType}
           </Label>)}
             content={metadata.violations[data.violationType]}
             basic />
           <Label>
             <Icon name={data.corrected === "Yes" ? 'check' : data.corrected === "No" ? 'times' : 'ban'} color={data.corrected === "Yes" ? 'green' : data.corrected === "No" ? 'red' : 'grey'} />
-            {data.corrected === "Yes" ? `Corrected on ${format(data.correctedDate, 'M-D-YY')}`.toUpperCase() : data.corrected === "No" ? "Not corrected".toUpperCase() : data.corrected.toUpperCase()}
+            {data.corrected === "Yes" ? `Corrected on ${format(data.correctedDate, 'M-D-YY')}` : data.corrected === "No" ? "Not corrected" : data.corrected}
           </Label>
         </Item.Extra>
     </Segment>
