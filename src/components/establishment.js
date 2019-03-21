@@ -49,8 +49,7 @@ const Establishment = ({ e }) => (
           <strong>Review frequency</strong>
         </Table.Cell>
         <Table.Cell>
-          {Math.round(e.reviewFrequencyDays) === 0 ? `Unknown`
-            : `Every ${Math.round(e.reviewFrequencyDays)} days`}
+          {Math.round(e.reviewFrequencyDays) === 0 ? "Unknown" : `Every ${Math.round(e.reviewFrequencyDays)} days`}
         </Table.Cell>
       </Table.Row>
     </Table.Body>
