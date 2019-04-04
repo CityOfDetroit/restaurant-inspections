@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Accordion, Icon } from 'semantic-ui-react';
 
-import metadata from '../data/metadata';
+// import metadata from '../data/metadata';
 
 class FAQ extends Component {
   state = { 
@@ -23,14 +23,14 @@ class FAQ extends Component {
 
     return (
       <Accordion fluid>
-        {metadata.faqs.map((f, i) => (
+        {this.props.data.map((d, i) => (
           <div key={i} style={{ borderBottom: '1px solid rgba(34, 36, 38, 0.15)', padding: '.5em 0' }}>
             <Accordion.Title active={activeIndex === i} index={i} onClick={this.handleClick} style={{ display: 'flex', flexDirection: 'vertical', justifyContent: 'space-between', alignItems: 'center' }}>
-              {f.question}
+              {d.question}
               <Icon name='dropdown' />
             </Accordion.Title>
             <Accordion.Content active={activeIndex === i}>
-              <span style={{ color: 'rgba(0, 0, 0, 0.6)'}}>{f.answer}</span>
+              <span style={{ color: 'rgba(0, 0, 0, 0.6)'}}>{d.answer}</span>
             </Accordion.Content>
           </div>
         ))}
