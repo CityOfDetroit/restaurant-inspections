@@ -11,7 +11,7 @@ const IndexPage = ({ data }) => {
       <SEO title="Home" keywords={[`restaurant`, `inspections`, `detroit`]} />
       <section style={{ fontSize: '1.25em', marginBottom: '1.5em' }}>
         <p>
-          Explore information about restaurant inspections from the Detroit Heatlh Department.
+          Explore information about restaurant inspections from the Detroit Health Department.
         </p>
       </section>
       <SearchEstablishments source={data.postgres.establishments} />

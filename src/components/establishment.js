@@ -3,7 +3,7 @@ import { Table, Popup, Icon } from "semantic-ui-react"
 import metadata from "../data/metadata"
 
 const Establishment = ({ e }) => (
-  <Table basic="very" celled striped>
+  <Table basic="very" celled striped compact='very'>
     <Table.Body>
       <Table.Row className={e.establishmentStatus === "Open" ? "positive" : ""}>
         <Table.Cell>
@@ -49,8 +49,7 @@ const Establishment = ({ e }) => (
           <strong>Review frequency</strong>
         </Table.Cell>
         <Table.Cell>
-          {Math.round(e.reviewFrequencyDays) === 0 ? `Unknown`
-            : `Every ${Math.round(e.reviewFrequencyDays)} days`}
+          {Math.round(e.reviewFrequencyDays) === 0 ? "Unknown" : `Every ${Math.round(e.reviewFrequencyDays)} days`}
         </Table.Cell>
       </Table.Row>
     </Table.Body>

@@ -15,19 +15,18 @@ createdb restaurants
 psql -d restaurants -c 'create extension postgis'
 bunzip2 restaurants.sql.bz2
 psql -d restaurants < restaurants.sql
-psql -d restaurants < spatial_functions.sql
+psql -d restaurants < functions.sql
 ```
 
-You'll find three tables in the `public` schema: `establishments`, `inspections` and `violations`. An establishment can have many inspections, and an inspection can have many violations. Following the [PostGraphile docs](https://www.graphile.org/postgraphile/introduction/), we've pre-defined indexes, foreign key constraints, and one postgres function in our database.
+You'll find three tables in the `public` schema: `establishments`, `inspections` and `violations`. An establishment can have many inspections, and an inspection can have many violations. Following the [PostGraphile docs](https://www.graphile.org/postgraphile/introduction/), we've pre-defined indexes, foreign key constraints, and postgres functions.
 
-Here's a copy of that function; it queries restaurants on name and returns a list:
+For example, this function matches restaurants on name and returns a list:
 
 ```psql
-create or replace function search_establishments (input text)
-        returns setof establishments as $$
-        select * from establishments
-                where name ilike ('%' || input || '%')
-        $$ language sql stable;
+create or replace function search_establishments(input text) returns setof establishments 
+  as $$ select * from establishments
+    where name ilike ('%' || input || '%')
+  $$ language sql stable;
 ```
 
 It translates to this handy GraphQL query:
@@ -46,7 +45,7 @@ It translates to this handy GraphQL query:
 }
 ```
 
-This data comes from [Detroit's open data portal](https://data.detroitmi.gov/browse?q=restaurants).
+This data is also available on [Detroit's open data portal](https://data.detroitmi.gov/browse?q=restaurants).
 
 ## Develop
 
@@ -58,11 +57,13 @@ Define your database connection string in `.env.development`:
 PG_CONN=postgres://{user}:{password}@{host}:{port}/{dbname}
 ```
 
-`yarn install` or `npm install` installs depenedencies
+`yarn install` installs depenedencies
 
 `gatsby develop` starts the development server and GraphiQL, an in-browser IDE for our site's data
 
 ### Deploy
+
+Create `.env.production` and define a database connection string
 
 Run `yarn deploy` from the master branch to deploy to `gh-pages`
 

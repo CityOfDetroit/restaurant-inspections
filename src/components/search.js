@@ -18,6 +18,8 @@ class SearchEstablishments extends Component {
     setTimeout(() => {
       if (this.state.value.length < 1) return this.resetComponent()
 
+      if(this.state.value.length > 0 && this.state.value.length < 3) { return; }
+
       const re = new RegExp(_.escapeRegExp(this.state.value), 'i')
       const isMatch = result => re.test(result.name)
 

@@ -7,9 +7,11 @@ const Location = ({ e, encoded }) => (
     <Grid.Row>
       <Grid.Column>
         <Header as="h3">
+        <a href={`https://www.google.com/maps/@${e.coords.split(",").reverse().join(",")},18z`}>
           {e.name}
           <Header.Subheader>{e.address}, Detroit, MI, {e.zipcode}</Header.Subheader>
-        </Header> 
+        </a>
+        </Header>
         <Image
           rounded
           bordered
