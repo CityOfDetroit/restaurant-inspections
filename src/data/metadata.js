@@ -33,11 +33,27 @@ const metadata = {
 
     "faqs": [
       {
-        question: "Are restaurants assigned grades?",
-        answer: "No, the Detroit Health Department does not assign grades or scores to establishments based on their inspection outcomes. This practice is consistent across the state of Michigan; no municipal health departments currently utilize a grading system. Instead, an inspection is marked as compliant or not compliant based on the types of violations cited and whether or not they were corrected."
+        question: "How many restaurants are in Detroit?",
+        answer: "There are approximately 1,900 restaurants operating in Detroit. This includes full service restaurants, faith based establishments, schools, coffee shops, bars, fast food chains, mobile food units, stadiums and casinos. You'll find about 2,100 records total in this data because closed establishments are still included if they were inspected by the Detroit Health Department since August 1, 2016."
       },
       {
-        question: "What does complexity level mean for establishments?",
+        question: "How many inspections are done?",
+        answer: "The Detroit Health Department's Food Safety team conducts 200-400 inspections per month. Approximately 3,500 inspections were conducted in 2018. Establishments are scheduled for routine inspections every xx-xxx days based on the complexity of their food preparation. See the 'Review frequency' field."
+      },
+      {
+        question: "Are restaurants assigned grades?",
+        answer: "No, the Detroit Health Department does not assign grades or scores to establishments based on their inspection outcomes. This practice is consistent across the entire state of Michigan; no municipal health departments currently utilize a grading system. Instead, an inspection is marked as compliant or not compliant based on the types of violations cited and whether or not they were corrected."
+      },
+      {
+        question: "What are the priority violations?",
+        answer: "Priority violations are the most serious category of food code violations and directly contribute to foodborne illness outbreaks or food poisoning occurances. The second most serious violations are Priority Foundation, and the least serious are Core. An inspection can only result in compliance if zero Priority or Priority Foundation violations are cited or if all Priority and Priority Foundation violations are corrected."
+      },
+      {
+        question: "How long do restaurants have to correct their violations? How does the Food Safety team follow-up?",
+        answer: "Priority violations should be corrected on site during the inspection, while Priority Foundation violations should be corrected within 10 days and Core violations should be corrected within 90 days of the inspection. The Food Safety team follows-up after 10 days to check the status of uncorrected violations and mark any as corrected, but does not follow up again to check the status of any outstanding Core violations because Core violations do not significantly contribute to foodborne illness or food poisoning, but are violations of other legal requirements. The number of cited versus corrected Priority and Priority Foundation violations determine overall compliance for that inspection."
+      },
+      {
+        question: "What is a restaurant's complexity level?",
         answer: "Complexity level is based on an establishment's food preparation; more complex food preparation increases risk and results in a more frequent review schedule. Possible values are High, Medium, and Low. This is a new field that is in the process of being updated by the Detroit Health Department, so some values may still appear null or unknown until the next review cycle."
       },
       {
