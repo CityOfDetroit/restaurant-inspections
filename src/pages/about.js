@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import FAQ from "../components/faq"
 
-import metadata from '../data/metadata';
+import metadata from '../data/metadata'
 
 const AboutPage = () => {
   return (
@@ -49,35 +49,5 @@ const AboutPage = () => {
     </Layout>
   )
 }
-
-// export const query = graphql`
-//  query AboutPageQuery {
-//   postgres {
-//     allEstablishments {
-//       totalCount
-//     }
-//   }
-//   postgres {
-//     allInspections {
-//       totalCount
-//     }
-//   }
-//   postgres {
-//     compliantInspections: allInspections(condition: {inCompliance: "Yes"}) {
-//       totalCount
-//     }
-//   }
-//   postgres {
-//     allViolations {
-//       totalCount
-//     }
-//   }
-//   postgres {
-//     seriousViolations: allViolations(filter: {violationType: {in: ["Priority", "Foundation"]}}) {
-//       totalCount
-//     }
-//   }
-// }
-// `
 
 export default AboutPage
