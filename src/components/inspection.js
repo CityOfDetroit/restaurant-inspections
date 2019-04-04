@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { format } from 'date-fns';
-import { Accordion, Icon, Header, Popup, Item, Table, Message } from 'semantic-ui-react';
+import { Accordion, Icon, Header, Popup, Table, Message, Segment } from 'semantic-ui-react';
 
 import Violation from './violation';
 import metadata from '../data/metadata';
