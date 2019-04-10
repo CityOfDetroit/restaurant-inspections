@@ -7,7 +7,7 @@ import metadata from '../data/metadata'
 import ViolationExpanded from './violation_expanded'
 
 const Violation = ({ data }) => {
-  let summary = `${data.itemDescription} ${_.lowerCase(data.subItem)} ${_.lowerCase(data.problemDescription)} ${_.lowerCase(data.subProblem)}`
+  let summary = `Item: ${data.itemDescription} ${_.lowerCase(data.subItem).trim()} | Problem: ${data.problemDescription} ${_.lowerCase(data.subProblem).trim()}`
   let fallback = `Expand for full food code definition`
 
   return (

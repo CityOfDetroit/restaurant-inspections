@@ -26,7 +26,6 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        {/* <Header /> */}
         <SiteHeader siteTitle={data.site.siteMetadata.title} />
         <div
           style={{

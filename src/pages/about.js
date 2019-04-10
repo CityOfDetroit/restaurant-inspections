@@ -45,6 +45,14 @@ const AboutPage = () => {
         Wednesday: 9am - 6pm <br />
         Saturday: 10am - 4pm <br />
       </p>
+
+      <Header as='h2'>Share Feedback</Header>
+      <p>
+        This site is built by the Innovation & Emerging Technology team at the City of Detroit in partnership with the Detroit Health Department using open data. Our code is on <a href="https://github.com/CityOfDetroit/restaurant-inspections">GitHub</a>.
+      </p>
+      <p>
+        Have an idea or question? Use <a href="https://app.smartsheet.com/b/form/078ffe2b874a4d55bb642cfbf5657056">this form</a> to get in touch with us or email <a href="mailto:foodsafety@detroitmi.gov">foodsafety@detroitmi.gov</a>.
+      </p>
       <br />
     </Layout>
   )
