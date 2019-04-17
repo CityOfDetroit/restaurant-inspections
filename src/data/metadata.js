@@ -1,56 +1,89 @@
 const metadata = {
     "outcomes": {
-      "Yes": "Compliant means zero Priority or Priority Foundation violations were cited or all P and PF violations were corrected.",
+      "Yes": "Compliant means zero Priority or Priority Foundation violations were cited, or all were corrected.",
       "No": "Not compliant means Priority or Priority Foundation violations were cited and not corrected."
     },
   
     "violations": {
       "Priority": "Priority violations are the most serious category and directly contribute to foodborne illness or food poisoning.",
       "Foundation": "Priority Foundation violations are the second most serious category and indirectly contribute to foodborne illness or food poisoning.",
-      "Core": "Core violations are the least serious category and do not significantly contribute to foodborne illness or food poisoning, but are violations of other legal requirements."
+      "Core": "Core violations are the least serious category and primarily relate to general cleanliness and facility maintenance."
     },
   
     "risks": {
-      "High": "High indicates very complex food preparation and therefore a more frequent review schedule, such as full service restaurants.",
-      "Medium": "Medium indicates moderately complex food preparation, such as hamburger fast food chains and bars that serve food.",
-      "Low": "Low indicates very limited food preparation and therefore a less frequent review schedule, such as a coffee shops or bars that only serve beverages.",
+      "High": "High indicates complex food preparation; these facilities are inspected two or more times per year.",
+      "Medium": "Medium indicates moderately complex food preparation; these facilities are inspected at least once a year.",
+      "Low": "Low indicates simple food preparation; these facilities are inspected once a year.",
       "null": "Complexity level is based on an establishment's food preparation; more complex food preparation increases risk and results in a more frequent review schedule. This is a new field that is in the process of being updated by the Detroit Health Department."
     },
-  
-    "inspections": {
-      "Routine inspection": "",
-      "Complaint": "",
-      "Pre-opening / Plan review": ""
+
+    "links": {
+      "dhd": {
+        display: "Detroit Health Department (DHD)",
+        url: "https://detroitmi.gov/departments/detroit-health-department"
+      },
+      "dhdFoodSafety": {
+        display: "DHD Food Safety",
+        url: "https://detroitmi.gov/departments/detroit-health-department/programs-and-services/food-safety"
+      },
+      "dhdEmail": {
+        display: "FoodSafetyDHD@detroitmi.gov",
+        url: "mailto:foodsafetydhd@detroitmi.gov"
+      },
+      "dhdPhone": {
+        display: "313-876-0135",
+        url: "tel:+13138760135"
+      }, 
+      "mdard": {
+        display: "Michigan Department of Agriculture & Rural Development (MDARD)",
+        url: "https://www.michigan.gov/mdard/"
+      },
+      "foodCode": {
+        display: "Michigan Food Code",
+        url: "https://www.michigan.gov/documents/mdard/MI_Modified_2009_Food_Code_396675_7.pdf"
+      },
+      "feedbackForm": {
+        display: "this form",
+        url: "https://app.smartsheet.com/b/form/078ffe2b874a4d55bb642cfbf5657056"
+      },
+      "iet": {
+        display: "Innovation & Emerging Technology",
+        url: "https://cityofdetroit.github.io/iet/"
+      },
+      "git": {
+        display: "GitHub",
+        url: "https://github.com/cityofdetroit/restaurant-inspections"
+      },
+      "openData": {
+        display: "open data",
+        url: "https://data.detroitmi.gov/browse?q=restaurants"
+      }
     },
-  
-    "establishments": "This data includes restaurants and other food service establishments, like school cafeterias or stadium concessions, that are inspected by the Detroit Health Department (DHD). Grocery stores, convenience stores, and other packaged and raw food establishments are inspected by the Michigan Department of Agriculture and Rural Development (MDARD) and are not included here.",
-    
-    "disclaimer": "If a restaurant, bar, or other food service establishment that prepares or serves food and beverages in Detroit is not found in this data, please email foodsafety@detroitmi.gov or call 313-876-0135 for follow up. Please include the name and address of the establishment, and the date and time of your visit in your message.",
-    
-    "foodCodeLink": "https://www.michigan.gov/documents/mdard/MI_Modified_2009_Food_Code_396675_7.pdf",
-    
-    "contact": "foodsafety@detroitmi.gov",
 
     "faqs_data": [
       {
         question: "How many restaurants are in Detroit?",
-        answer: "There are approximately 1,900 restaurants operating in Detroit. This includes full service restaurants, faith based establishments, schools, coffee shops, bars, fast food chains, mobile food units, stadiums and casinos. You'll find about 2,100 records total in this data because closed establishments are still included if they were inspected by the Detroit Health Department since August 1, 2016."
+        answer: "There are approximately 1,900 restaurants operating in Detroit. This includes full service restaurants, faith based establishments, schools, coffee shops, bars, fast food chains, mobile food units, stadiums and casinos. You'll find about 2,300 open and closed establishments inspected by the Detroit Health Department since August 1, 2016."
       },
       {
         question: "How many inspections are done?",
-        answer: "The Detroit Health Department's Food Safety team conducts 200-400 inspections per month. Approximately 3,500 inspections were conducted in 2018. Establishments are scheduled for routine inspections every xx-xxx days based on the complexity of their food preparation. See the 'Review frequency' field."
+        answer: "The Detroit Health Department conducts 200-400 inspections per month. Approximately 3,500 inspections were conducted in 2018. Establishments are scheduled for routine inspections based on the complexity of their food preparation. See the 'Review frequency' field."
       },
       {
         question: "Are restaurants assigned grades?",
-        answer: "No, the Detroit Health Department does not assign grades or scores to establishments based on their inspection outcomes. This practice is consistent across the entire state of Michigan; no municipal health departments currently utilize a grading system. Instead, an inspection is marked as compliant or not compliant based on the types of violations cited and whether or not they were corrected."
+        answer: "No, the Detroit Health Department does not assign grades or scores to establishments based on their inspection outcomes. Currently, no health department in Michigan utilizes a grading system. Instead, an inspection is marked as compliant or not compliant based on the type of violation(s) cited and whether or not they were corrected."
       },
       {
         question: "What are the most serious violations?",
-        answer: "Priority violations are the most serious category of food code violations and directly contribute to foodborne illness outbreaks or food poisoning occurances. The second most serious violations are Priority Foundation, and the least serious are Core. An inspection only results in compliance when zero Priority or Priority Foundation violations are cited or when all Priority and Priority Foundation violations are corrected."
+        answer: "Priority violations are the most serious category of food code violations and directly contribute to foodborne illness outbreaks or food poisoning occurances. The second most serious violations are Priority Foundation, and the least serious are Core. An inspection only results in compliance when zero Priority or Priority Foundation violations are cited, or when all are corrected."
       },
       {
-        question: "How long do restaurants have to correct their violations? How does the Food Safety team follow-up?",
-        answer: "Priority violations should be corrected on site during the inspection, while Priority Foundation violations should be corrected within 10 days and Core violations should be corrected within 90 days of the inspection. The Food Safety team follows-up after 10 days to check the status of uncorrected violations and mark any as corrected, but does not follow up again to check the status of any outstanding Core violations because Core violations do not significantly contribute to foodborne illness or food poisoning, but are violations of other legal requirements. The number of cited versus corrected Priority and Priority Foundation violations determine overall compliance for that inspection."
+        question: "How long do restaurants have to correct their violations?",
+        answer: "Priority violations are typically corrected during the inspection, while Priority Foundation violations should be corrected within 30 days and Core violations should be corrected within 90 days."
+      },
+      {
+        question: "How does the Detroit Health Department follow-up after a violation is cited?",
+        answer: "The Detroit Health Department follows-up within 30 days to check the status of uncorrected Priority and Priority Foundation violations. Uncorrected Core violations are reviewed at the next routine inspection."
       },
       {
         question: "What is a restaurant's complexity level?",
@@ -58,15 +91,15 @@ const metadata = {
       },
       {
         question: "I searched for a bakery that I know is in Detroit and open for business, but I don't see it included here?",
-        answer: "If a bakery sells wholesale items, then it would be inspected by the Michigan Department of Agriculture and Rural Developement (MDARD), and therefore not included in this dataset."
+        answer: "If a bakery primarily wholesales to other businesses, then it would be inspected by the Michigan Department of Agriculture and Rural Developement (MDARD), and therefore not included in this dataset."
       },
       {
         question: "I searched for a food truck that I see around Detroit, but I don't see it included here?",
-        answer: "Food trucks operating in Detroit can be licensed to any municipal health department based on the owner's registered address. Independent of where they are licensed to, all food trucks should have their license visibly displayed on the exterior of the vehicle."
+        answer: "Food trucks operating in Detroit may be licensed by another health department in the state adn may operate in other areas. All food trucks should have their license decal visibly displayed on the exterior of the vehicle."
       },
       {
-        question: "How often are these data updated?",
-        answer: "Restaurant inspections data is updated monthly on the last day of the month and includes data through the last full month. For example, on March 31, the data will be updated to reflect inspections through February 28. This allows food safety inspectors time to verify their reports and follow up about corrections."
+        question: "How often is this data updated?",
+        answer: "Restaurant inspections data is updated monthly on the last day of the month and includes data through the last full month. For example, on March 31, the data will be updated to reflect inspections through February 28. This allows food safety inspectors time to verify their reports and follow-up on corrections."
       },
       {
         question: "How can I access the raw data?",
@@ -77,27 +110,31 @@ const metadata = {
     "faqs_process": [
       {
         question: "What happens during a food safety inspection?",
-        answer: "The Detroit Health Department Food Safety team observes the visual and physical food and operational processes of the staff during an inspection. Any observed violations that occur during an inspection are discussed with the management and staff. Any violations that are able to be corrected on-site during the inspection are documented."
+        answer: "The Detroit Health Department Food Safety team observes food handling and facility operations during an inspection. Observed violations that occur during an inspection are documented and discussed with management and staff. Any violations that are able to be corrected on-site during the inspection are documented as corrected."
       },
       {
-        question: "How does a routine inspection differ from a complaint inspection?",
-        answer: "If the Detroit Health Department Food Safety team receives a complaint about an establishment, they will initiate an inspection outside of the normal review cycle. During a complaint inspection, the Food Safety team will only observe and document violations related to the physical areas or processes that were noted in the complaint. Routine inspections on the other hand always observe the entire physical areas and processes of an establishment."
+        question: "How is a complaint inspection different than a routine inspection?",
+        answer: "During a complaint inspection, the Detroit Health Department inspector will only observe and document violations related to the complaint. During a routine inspection, the entire facility and processes of an establishment are observed."
       },
       {
         question: "What is the goal of food safety inspections?",
-        answer: "Food Safety inspections are conducted with the goal to reduce the possibility of foodborne illness occurances and foodborne illness outbreaks. DHD works towards this goal by conducting inspections and facilitating educational trainings at facilities."
+        answer: "Food Safety inspections are conducted to reduce the potential for foodborne illness and food poisoning."
       },
       {
-        question: "What are the Food Safety Code standards?",
-        answer: "The Food Safety Code standards are based on the five federal Food and Drug Administration (FDA) risk factors and interventions that are key to protecting consumer health. The five risk factors are: improper holding temperatures; inadequate cooking temperatures; contaminated equipment; food from unsafe sources; and, poor personal hygiene. The five associated interventions are: demonstration of knowledge; employee health control; controlling hands as a vehicle of contamination; time and temperature parameters for controlling pathogens; and, the consumer advisory."
+        question: "What is the responsibility of the restaurant's Person-In-Charge (Manager/Supervisor)?",
+        answer: "The role of the Person-In-Charge is to ensure that employees are trained and following food safety standards."
       },
       {
-        question: "At what point does DHD shut a restaurant down?",
-        answer: "With the cooperation of the person-in-charge, a food establishment may be asked to close during interruptions of utility services, contaminated water supply, fire, flood, sewage back-up, or any situation where safe operations cannot be assured."
+        question: "What are the Food Safety standards based on?",
+        answer: "Food Safety standards are based on the Food and Drug Administration (FDA) foodborne illness risk factors. The control measures to protect consumer health are: demonstration of knowledge; employee health; preventing contamination from hands; time and temperature requirements for cooking and holding food; approved food sources; and, consumer advisories."
+      },
+      {
+        question: "At what point does the Detroit Health Department shut a restaurant down?",
+        answer: "An establishment may be asked to close during interruptions of utility services, contaminated water supply, fire, flood, sewage back-up, or any situation where safe operations cannot be assured. The Detroit Health Department will issue a Closure Order if necessary."
       },
       {
         question: "What should the public pay attention to when dining out?",
-        answer: "The public should pay attention to restaurant cleanliness and maintenance, the appearance of employees (such as clean clothes, hair coverings when required, etc), food handling practices, and the presense of managment."
+        answer: "The public should pay attention to restaurant cleanliness, maintenance, food handling practices, the presence of management and the appearance of employees (such as clean clothes and hands, hair coverings when required, etc)."
       },
     ]
   };

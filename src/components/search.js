@@ -48,7 +48,7 @@ class SearchEstablishments extends Component {
       <Search
         input={{ fluid: true }}
         fluid
-        size='large'
+        size='big'
         placeholder="Search by name..."
         loading={isLoading}
         onResultSelect={this.handleResultSelect}

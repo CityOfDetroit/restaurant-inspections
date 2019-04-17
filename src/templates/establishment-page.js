@@ -44,10 +44,10 @@ export default ({ data }) => {
         <Inspection data={e.inspectionsByEstablishmentidList} />
         <Message visible size="small">
           <Message.Header>About inspections</Message.Header>
-          A restaurant is{" "}<strong>compliant</strong> <Icon name="check" color="green" />
-          when zero Priority or Priority Foundation violations are found during
-          an inspection or when all P and PF violations are corrected; Core violations 
-          are not required to be corrected to be in compliance.
+          A restaurant is <strong>compliant</strong> <Icon name="check" color="green" /> 
+          when zero Priority or Priority Foundation violations are cited during an inspection, 
+          or when all are corrected; Core violations will be reviewed at the next routine 
+          inspection and are not required to be corrected to be in compliance.
         </Message>
 
       {e.coords ? <><Divider /><Location e={e} encoded={encoded} /></> : ''}

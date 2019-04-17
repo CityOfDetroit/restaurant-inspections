@@ -138,9 +138,9 @@
        Links
 --------------------*/
 
-@linkColor           : @spiritGreenTextColor;
+@linkColor           : darken(@spiritGreenTextColor, 15, relative);
 @linkUnderline       : none;
-@linkHoverColor      : darken(saturate(@linkColor, 20), 15, relative);
+@linkHoverColor      : darken(saturate(@linkColor, 20), 30, relative);
 @linkHoverUnderline  : @linkUnderline;
 
 /*-------------------
@@ -476,7 +476,7 @@
 
 @circularRadius                : 500rem;
 
-@borderColor               : rgba(34, 36, 38, 0.15);
+@borderColor               : rgba(0, 36, 38, 0.15);
 @strongBorderColor         : rgba(34, 36, 38, 0.22);
 @internalBorderColor       : rgba(34, 36, 38, 0.1);
 @selectedBorderColor       : rgba(34, 36, 38, 0.35);

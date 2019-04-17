@@ -55,11 +55,11 @@ class Inspection extends Component {
                   </Table.Row>
                 </Table.Body>
               </Table>
-
+{/* 
               {format(e.inspectionDate, 'YY') === '16' || format(e.inspectionDate, 'YY') === '17' ?
                 <Message visible size="small">
                   ***Please note that inspections pre-2018 were still occasionally completed on paper and follow-up visits to document corrections were not always digitized. This means that inspections in this time period are slightly more likely to show a not compliant outcome.
-                </Message> : ''}
+                </Message> : ''} */}
 
               <Header as='h5'>
                 {e.violationsByInspectionidList.length} {e.violationsByInspectionidList.length === 1 ? 'violation' : 'violations'} cited {e.violationsByInspectionidList.length > 0 ? ':' : null}

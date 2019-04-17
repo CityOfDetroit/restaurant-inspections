@@ -7,7 +7,7 @@ import metadata from '../data/metadata'
 import ViolationExpanded from './violation_expanded'
 
 const Violation = ({ data }) => {
-  let summary = `Item: ${data.itemDescription} ${_.lowerCase(data.subItem).trim()} | Problem: ${data.problemDescription} ${_.lowerCase(data.subProblem).trim()}`
+  let summary = `${data.itemDescription} ${_.lowerCase(data.subItem)} ${_.lowerCase(data.problemDescription)} ${_.lowerCase(data.subProblem)}`
   let fallback = `Expand for full food code definition`
 
   return (
@@ -22,7 +22,7 @@ const Violation = ({ data }) => {
           basic />
         <Label>
           <Icon name={data.corrected === "Yes" ? 'check' : data.corrected === "No" ? 'times' : 'ban'} color={data.corrected === "Yes" ? 'green' : data.corrected === "No" ? 'red' : 'grey'} />
-          {data.corrected === "Yes" ? `Corrected on ${format(data.correctedDate, 'M-D-YY')}` : data.corrected === "No" ? "Not corrected" : data.corrected}
+          {data.corrected === "Yes" ? `Corrected on ${format(data.correctedDate, 'M-D-YY')}` : data.corrected === "No" ? "Not corrected" : data.corrected === "Not required" ? "Reviewed at next routine inspection" : data.corrected}
         </Label>
       </Item.Extra>
     </Segment>
