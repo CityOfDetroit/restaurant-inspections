@@ -16,13 +16,13 @@ const AboutPage = () => {
         This site provides information about food safety inspections in the City of Detroit. 
       </p>
       <p>
-        The data includes restaurants and other food service establishments, like school cafeterias and stadium concessions, that are inspected by the <a href={metadata.links.dhd.url}>{metadata.links.dhd.display}</a>. 
+        The data includes restaurants and other food service establishments, like school cafeterias and stadium concessions, that are inspected by the <a href={metadata.links.dhd.url} target='_blank' rel='noopener noreferrer'>{metadata.links.dhd.display}</a>. 
       </p>
       <p>
-        Grocery stores, liquor stores, and other packaged food establishments are inspected by the <a href={metadata.links.mdard.url}>{metadata.links.mdard.display}</a> and are not included here.
+        Grocery stores, liquor stores, and other packaged food establishments are inspected by the <a href={metadata.links.mdard.url} target='_blank' rel='noopener noreferrer'>{metadata.links.mdard.display}</a> and are not included here.
       </p>
       <p>
-        If a restaurant, bar, or other food service establishment that prepares or serves food and beverages in Detroit is not found in this data, please email <a href={metadata.links.dhdEmail.url}>{metadata.links.dhdEmail.display}</a> or call <a href={metadata.links.dhdPhone.url}>{metadata.links.dhdPhone.display}</a> for follow up. Please include the name and address of the establishment, and the date and time of your visit in your message.
+        If a restaurant, bar, or other food service establishment that prepares or serves food and beverages in Detroit is not found in this data, please email <a href={metadata.links.dhdEmail.url} target='_blank' rel='noopener noreferrer'>{metadata.links.dhdEmail.display}</a> or call <a href={metadata.links.dhdPhone.url} target='_blank' rel='noopener noreferrer'>{metadata.links.dhdPhone.display}</a> for follow up. Please include the name and address of the establishment, and the date and time of your visit in your message.
       </p>
       
       <Header as='h2'>Frequently Asked Questions</Header>
@@ -33,10 +33,10 @@ const AboutPage = () => {
 
       <Header as='h2'>Share Feedback</Header>
       <p>
-        This site is built by the <a href={metadata.links.iet.url}>{metadata.links.iet.display}</a> team at the City of Detroit in partnership with the Detroit Health Department using <a href={metadata.links.openData.url}>{metadata.links.openData.display}</a>. Our code is on <a href={metadata.links.git.url}>{metadata.links.git.display}</a>.
+        This site is built by the <a href={metadata.links.iet.url} target='_blank' rel='noopener noreferrer'>{metadata.links.iet.display}</a> team at the City of Detroit in partnership with the Detroit Health Department using <a href={metadata.links.openData.url} target='_blank' rel='noopener noreferrer'>{metadata.links.openData.display}</a>. Our code is on <a href={metadata.links.git.url} target='_blank' rel='noopener noreferrer'>{metadata.links.git.display}</a>.
       </p>
       <p>
-        Have an idea or question? Use <a href={metadata.links.feedbackForm.url}>{metadata.links.feedbackForm.display}</a> to get in touch with our project team or email <a href={metadata.links.dhdEmail.url}>{metadata.links.dhdEmail.display}</a>.
+        Have an idea or question? Use <a href={metadata.links.feedbackForm.url} target='_blank' rel='noopener noreferrer'>{metadata.links.feedbackForm.display}</a> to get in touch with our project team or email <a href={metadata.links.dhdEmail.url} target='_blank' rel='noopener noreferrer'>{metadata.links.dhdEmail.display}</a>.
       </p>
       <br />
     </Layout>

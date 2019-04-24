@@ -91,11 +91,11 @@ const metadata = {
       },
       {
         question: "I searched for a bakery that I know is in Detroit and open for business, but I don't see it included here?",
-        answer: "If a bakery primarily wholesales to other businesses, then it would be inspected by the Michigan Department of Agriculture and Rural Developement (MDARD), and therefore not included in this dataset."
+        answer: "If a bakery primarily wholesales to other businesses, then it is inspected by the Michigan Department of Agriculture and Rural Developement (MDARD), and therefore not included in this dataset."
       },
       {
         question: "I searched for a food truck that I see around Detroit, but I don't see it included here?",
-        answer: "Food trucks operating in Detroit may be licensed by another health department in the state adn may operate in other areas. All food trucks should have their license decal visibly displayed on the exterior of the vehicle."
+        answer: "Food trucks operating in Detroit may be licensed by another health department in the state and may operate in other areas. All food trucks should have their license decal visibly displayed on the exterior of the vehicle."
       },
       {
         question: "How often is this data updated?",

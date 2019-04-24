@@ -7,6 +7,7 @@ import Layout from "../components/layout"
 import Location from "../components/location"
 import Establishment from "../components/establishment"
 import SEO from "../components/seo"
+import Citation from "../components/citation"
 
 export default ({ data }) => {
   const e = data.postgres.establishment[0]
@@ -51,6 +52,8 @@ export default ({ data }) => {
         </Message>
 
       {e.coords ? <><Divider /><Location e={e} encoded={encoded} /></> : ''}
+
+      <Citation />
     </Layout>
   )
 }
