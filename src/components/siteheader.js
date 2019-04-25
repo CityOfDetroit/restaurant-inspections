@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Image, Header } from "semantic-ui-react"
+import { Image, Header, Label } from "semantic-ui-react"
 import PropTypes from "prop-types"
 
 import  logo  from "../images/cod-logo.jpg"
@@ -17,9 +17,9 @@ const SiteHeader = ({ siteTitle }) => (
       <Link to="/about" style={{ color: `black`, textDecoration: `none` }}>
         ABOUT
       </Link>
-      {/* <Label color='teal' tag>
+      <Label color='teal' size='small' tag>
         BETA
-      </Label> */}
+      </Label>
     </div>
   </header>
 )
