@@ -11,6 +11,7 @@ import Citation from "../components/citation"
 
 export default ({ data }) => {
   const e = data.postgres.establishment[0]
+  const last_updated = data.postgres.maxInspectionDate[0].inspectionDate
 
   // make geojson and encode for use in Mapbox Static API
   let json = {
@@ -53,7 +54,7 @@ export default ({ data }) => {
 
       {e.coords ? <><Divider /><Location e={e} encoded={encoded} /></> : ''}
 
-      <Citation />
+      <Citation date={last_updated} />
     </Layout>
   )
 }
@@ -64,9 +65,7 @@ export const query = graphql`
       pathPrefix
     }
     postgres {
-      establishment: allEstablishmentsList(
-        condition: { establishmentid: $eid }
-      ) {
+      establishment: allEstablishmentsList(condition: { establishmentid: $eid }) {
         establishmentid
         name
         address
@@ -107,6 +106,9 @@ export const query = graphql`
             correctionDescription
           }
         }
+      }
+      maxInspectionDate: allInspectionsList(orderBy: INSPECTION_DATE_DESC, first: 1) {
+        inspectionDate
       }
     }
   }

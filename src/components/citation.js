@@ -8,7 +8,7 @@ import metadata from "../data/metadata";
 let x = new Date();
 x.setDate(0);
 
-const Citation = () => (
+const Citation = ({ date }) => (
   <Segment basic size='small' textAlign='right'>
     Built using <a href={metadata.links.openData.url} target='_blank' rel='noopener noreferrer'>{metadata.links.openData.display}</a> | Last updated {format(x, 'M-D-YYYY')}
   </Segment>
