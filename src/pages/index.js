@@ -1,6 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
-import { Button } from "semantic-ui-react"
+import { graphql, Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -15,15 +14,15 @@ const IndexPage = ({ data }) => {
         Explore information about food safety inspections in the City of Detroit
       </section>
       <section style={{ fontSize: '1em', marginBottom: '2em' }}>
-        Start typing below to find restaurants and other food service establishments, like school cafeterias and stadium concessions, that are inspected by the Detroit Health Department. 
+        Start typing below to find restaurants and other food service establishments, like school cafeterias and stadium concessions, that are inspected by the Detroit Health Department or click <Link to="/about">ABOUT</Link> to learn more.
       </section>
       <section style={{ marginBottom: '1.25em' }}>
         <SearchEstablishments source={data.postgres.establishments} />
       </section>
-      <section style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', marginTop: '2em' }}>
+      {/* <section style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', marginTop: '2em' }}>
         <Button color='teal'>ABOUT</Button>
         <Button color='teal' style={{ marginLeft: '1em' }}>FAQs</Button>
-      </section>
+      </section> */}
       <Citation date={data.postgres.maxInspectionDate[0].inspectionDate} />
     </Layout>
   )

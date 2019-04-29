@@ -18,7 +18,7 @@
 @textAlign: left;
 @background: @inputBackground;
 @borderWidth: 1px;
-@border: 3px solid @borderColor;
+@border: 2px solid #004445;
 @boxShadow: none;
 
 @borderRadius: 0;
@@ -33,7 +33,7 @@
 
 /* Icon Input */
 @iconWidth: (@verticalPadding * 2) + @glyphWidth;
-@iconOpacity: 0.5;
+@iconOpacity: 1;
 @iconFocusOpacity: 1;
 @iconOffset: -0.5em;
 
@@ -64,7 +64,7 @@
 --------------------*/
 
 /* Placeholder */
-@placeholderColor: @inputPlaceholderColor;
+@placeholderColor: #004445;
 @placeholderFocusColor: @inputPlaceholderFocusColor;
 
 /* Down */
@@ -74,7 +74,7 @@
 @downBoxShadow: none;
 
 /* Focus */
-@focusBorderColor: @focusedFormBorderColor;
+@focusBorderColor: @teal;
 @focusBackground: @background;
 @focusColor: @hoveredTextColor;
 @focusBoxShadow: none;
