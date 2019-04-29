@@ -27,7 +27,7 @@
 @resultsWidth: 18em;
 @resultsBackground: #FFFFFF;
 @resultsDistance: 0.5em;
-@resultsBorderRadius: @defaultBorderRadius;
+@resultsBorderRadius: 0;
 @resultsBorder: 1px solid @solidBorderColor;
 @resultsBoxShadow: @floatingShadow;
 

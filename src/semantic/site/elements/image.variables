@@ -7,7 +7,7 @@
 --------------------*/
 
 @placeholderColor: transparent;
-@roundedBorderRadius: 0.3125em;
+@roundedBorderRadius: 0;
 
 @imageHorizontalMargin: 0.25rem;
 @imageVerticalMargin: 0.5rem;

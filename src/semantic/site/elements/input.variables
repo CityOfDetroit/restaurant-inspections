@@ -18,10 +18,10 @@
 @textAlign: left;
 @background: @inputBackground;
 @borderWidth: 1px;
-@border: @borderWidth solid @borderColor;
+@border: 3px solid @borderColor;
 @boxShadow: none;
 
-@borderRadius: @defaultBorderRadius;
+@borderRadius: 0;
 @transition:
   box-shadow @defaultDuration @defaultEasing,
   border-color @defaultDuration @defaultEasing

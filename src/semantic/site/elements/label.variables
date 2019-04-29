@@ -14,7 +14,7 @@
 @backgroundImage: none;
 @verticalPadding: 0.5833em; /* medium is not @emSize custom value required */
 @horizontalPadding: 0.833em;
-@borderRadius: @absoluteBorderRadius;
+@borderRadius: 0;
 @textTransform: none;
 @fontWeight: @bold;
 @borderWidth: 1px;

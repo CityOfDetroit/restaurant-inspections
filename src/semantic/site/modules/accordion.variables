@@ -57,7 +57,7 @@
 /* Styled */
 @styledWidth: 600px;
 @styledBackground: @white;
-@styledBorderRadius: @defaultBorderRadius;
+@styledBorderRadius: 0;
 @styledBoxShadow:
   @subtleShadow,
   0px 0px 0px 1px @borderColor
