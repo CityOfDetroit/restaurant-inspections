@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { format } from 'date-fns';
-import { Accordion, Icon, Header, Popup, Table, Message, Segment } from 'semantic-ui-react';
+import { Accordion, Icon, Header, Popup, Table, Segment } from 'semantic-ui-react';
 
 import Violation from './violation';
 import metadata from '../data/metadata';
@@ -55,12 +55,6 @@ class Inspection extends Component {
                   </Table.Row>
                 </Table.Body>
               </Table>
-{/* 
-              {format(e.inspectionDate, 'YY') === '16' || format(e.inspectionDate, 'YY') === '17' ?
-                <Message visible size="small">
-                  ***Please note that inspections pre-2018 were still occasionally completed on paper and follow-up visits to document corrections were not always digitized. This means that inspections in this time period are slightly more likely to show a not compliant outcome.
-                </Message> : ''} */}
-
               <Header as='h5'>
                 {e.violationsByInspectionidList.length} {e.violationsByInspectionidList.length === 1 ? 'violation' : 'violations'} cited {e.violationsByInspectionidList.length > 0 ? ':' : null}
               </Header>

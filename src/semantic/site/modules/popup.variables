@@ -19,7 +19,7 @@
 @horizontalPadding: 1em;
 @fontWeight: @normal;
 @fontStyle: @normal;
-@borderRadius: @defaultBorderRadius;
+@borderRadius: 0;
 
 /*-------------------
        Parts
@@ -68,7 +68,7 @@
 
 /* Tooltip */
 @tooltipBackground: @background;
-@tooltipBorderRadius: @borderRadius;
+@tooltipBorderRadius: 0;
 @tooltipPadding: @verticalPadding @horizontalPadding;
 @tooltipFontWeight: @fontWeight;
 @tooltipFontStyle: @fontStyle;
