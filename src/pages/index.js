@@ -19,10 +19,6 @@ const IndexPage = ({ data }) => {
       <section style={{ marginBottom: '1.25em' }}>
         <SearchEstablishments source={data.postgres.establishments} />
       </section>
-      {/* <section style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', marginTop: '2em' }}>
-        <Button color='teal'>ABOUT</Button>
-        <Button color='teal' style={{ marginLeft: '1em' }}>FAQs</Button>
-      </section> */}
       <Citation date={data.postgres.maxInspectionDate[0].inspectionDate} />
     </Layout>
   )

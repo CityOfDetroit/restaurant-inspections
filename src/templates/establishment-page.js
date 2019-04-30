@@ -33,24 +33,24 @@ export default ({ data }) => {
         {e.name}
         <Header.Subheader>{e.address}</Header.Subheader>
       </Header>
-      
       <Divider />
+
       <Header as="h3">{e.establishmentType}</Header>
       <Establishment e={e} />
-    
       <Divider />
-        <Header as="h3">
-          {e.inspectionsByEstablishmentidList.length} Inspections
-          <Header.Subheader>Since 8-1-2016</Header.Subheader>
-        </Header>
-        <Inspection data={e.inspectionsByEstablishmentidList} />
-        <Message visible size="small">
-          <Message.Header>About inspections</Message.Header>
-          A restaurant is <strong>compliant</strong> <Icon name="check" color="green" /> 
-          when zero Priority or Priority Foundation violations are cited during an inspection, 
-          or when all are corrected; Core violations will be reviewed at the next routine 
-          inspection and are not required to be corrected to be in compliance.
-        </Message>
+
+      <Header as="h3">
+        {e.inspectionsByEstablishmentidList.length} Inspections
+        <Header.Subheader>Since 8-1-2016</Header.Subheader>
+      </Header>
+      <Inspection data={e.inspectionsByEstablishmentidList} />
+      <Message visible size="small">
+        <Message.Header>About inspections</Message.Header>
+        A restaurant is <strong>compliant</strong> <Icon name="check" color="green" /> 
+        when zero Priority or Priority Foundation violations are cited during an inspection, 
+        or when all are corrected; Core violations will be reviewed at the next routine 
+        inspection and are not required to be corrected to be in compliance.
+      </Message>
 
       {e.coords ? <><Divider /><Location e={e} encoded={encoded} /></> : ''}
 
