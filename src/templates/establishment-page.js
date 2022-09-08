@@ -85,7 +85,7 @@ export const query = graphql`
           address
           zipcode
         }
-        inspectionsByEstablishmentidList {
+        inspectionsByEstablishmentidList(orderBy: INSPECTION_DATE_DESC) {
           inspectionid
           inspectionDate
           inspectionType

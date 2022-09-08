@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { format } from 'date-fns';
 import { Accordion, Icon, Header, Popup, Table, Segment } from 'semantic-ui-react';
-
+import * as dayjs from 'dayjs'
 import Violation from './violation';
 import metadata from '../data/metadata';
 
@@ -29,7 +28,7 @@ class Inspection extends Component {
           <div key={i}>
             <Accordion.Title active={activeIndex === i} index={i} onClick={this.handleClick} style={{ display: 'flex', flexDirection: 'vertical', justifyContent: 'space-between', alignItems: 'center' }}>
               <Header as='h3'>
-                {format(e.inspectionDate, 'M-D-YYYY')}
+                {dayjs(e.inspectionDate).format('MM-DD-YYYY')}
                 <Header.Subheader>
                   {e.inspectionType + ' '}
                   <Icon name={e.inCompliance === "Yes" ? 'check' : e.inCompliance === "No" ? 'times' : null} color={e.inCompliance === "Yes" ? 'green' : 'red'} />

@@ -1,8 +1,7 @@
 import React from 'react'
 import _ from 'lodash'
-import { format } from 'date-fns'
 import { Segment, Item, Label, Icon, Header, Popup } from 'semantic-ui-react'
-
+import * as dayjs from 'dayjs'
 import metadata from '../data/metadata'
 import ViolationExpanded from './violation_expanded'
 
@@ -22,7 +21,7 @@ const Violation = ({ data }) => {
           basic />
         <Label>
           <Icon name={data.corrected === "Yes" ? 'check' : data.corrected === "No" ? 'times' : 'ban'} color={data.corrected === "Yes" ? 'green' : data.corrected === "No" ? 'red' : 'grey'} />
-          {data.corrected === "Yes" ? `Corrected on ${format(data.correctedDate, 'M-D-YY')}` : data.corrected === "No" ? "Not corrected" : data.corrected === "Not required" ? "Reviewed at next routine inspection" : data.corrected}
+          {data.corrected === "Yes" ? `Corrected on ${dayjs(data.correctedDate).format('M-DD-YYYY')}` : data.corrected === "No" ? "Not corrected" : data.corrected === "Not required" ? "Reviewed at next routine inspection" : data.corrected}
         </Label>
       </Item.Extra>
     </Segment>
