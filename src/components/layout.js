@@ -11,7 +11,6 @@ import { StaticQuery, graphql } from "gatsby"
 // import { Header } from 'det-header-test'
 
 import SiteHeader from "./siteheader"
-import 'semantic-ui-less/semantic.less'
 
 const Layout = ({ children }) => (
   <StaticQuery
