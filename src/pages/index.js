@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import SearchEstablishments from "../components/search"
 import Citation from "../components/citation"
+import 'semantic-ui-css/semantic.min.css'
 
 const IndexPage = ({ data }) => {
   return (
