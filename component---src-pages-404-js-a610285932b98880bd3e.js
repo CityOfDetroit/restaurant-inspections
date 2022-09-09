@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkrestaurant_inspections=self.webpackChunkrestaurant_inspections||[]).push([[883],{429:function(e,t,n){n.r(t);var r=n(7294),a=n(1597),l=n(5685),s=n(262);t.default=function(){return r.createElement(l.Z,null,r.createElement(s.Z,{title:"404"}),r.createElement("h1",null,"404 Not Found"),r.createElement("p",null,"Sorry, this page doesn't exist. ",r.createElement(a.Link,{to:"/"},"Go back home.")))}}}]);
+//# sourceMappingURL=component---src-pages-404-js-a610285932b98880bd3e.js.map
