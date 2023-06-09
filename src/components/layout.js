@@ -34,7 +34,12 @@ const Layout = ({ children }) => (
             paddingTop: 0,
           }}
         >
-          <main>{children}</main>
+          <main>
+            <div style={{color: `red`, border: `4px solid red`, padding: `10px`, marginBottom: `1em`, fontSize: `2rem`, lineHeight: `2.5rem`, fontWeight: `bolder`}}>
+              This site is deprecated, please go to <a href="https://detroitrestaurantinspections.netlify.app/">detroitrestaurantinspections.netlify.app</a> to view the maintained site.
+            </div>
+            {children}
+          </main>
         </div>
       </>
     )}
