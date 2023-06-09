@@ -46,9 +46,9 @@ const metadata = {
         display: "this form",
         url: "https://app.smartsheet.com/b/form/078ffe2b874a4d55bb642cfbf5657056"
       },
-      "iet": {
-        display: "Innovation & Emerging Technology",
-        url: "https://cityofdetroit.github.io/iet/"
+      "odt": {
+        display: "Open Data",
+        url: "https://data.detroitmi.gov/pages/about-detroit-open-data"
       },
       "git": {
         display: "GitHub",
