@@ -33,7 +33,7 @@ const AboutPage = () => {
 
       <Header as='h2'>Share Feedback</Header>
       <p>
-        This site is built by the <a href={metadata.links.iet.url} target='_blank' rel='noopener noreferrer'>{metadata.links.iet.display}</a> team at the City of Detroit in partnership with the Detroit Health Department using <a href={metadata.links.openData.url} target='_blank' rel='noopener noreferrer'>{metadata.links.openData.display}</a>. Our code is on <a href={metadata.links.git.url} target='_blank' rel='noopener noreferrer'>{metadata.links.git.display}</a>.
+        This site is built by the <a href={metadata.links.odt.url} target='_blank' rel='noopener noreferrer'>{metadata.links.odt.display}</a> team at the City of Detroit in partnership with the Detroit Health Department using <a href={metadata.links.openData.url} target='_blank' rel='noopener noreferrer'>{metadata.links.openData.display}</a>. Our code is on <a href={metadata.links.git.url} target='_blank' rel='noopener noreferrer'>{metadata.links.git.display}</a>.
       </p>
       <p>
         Have an idea or question? Use <a href={metadata.links.feedbackForm.url} target='_blank' rel='noopener noreferrer'>{metadata.links.feedbackForm.display}</a> to get in touch with our project team or email <a href={metadata.links.dhdEmail.url} target='_blank' rel='noopener noreferrer'>{metadata.links.dhdEmail.display}</a>.

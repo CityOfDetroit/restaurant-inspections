@@ -6,10 +6,11 @@ module.exports = {
   siteMetadata: {
     title: `Detroit Restaurant Inspections`,
     description: `Search restaurant inspections open data from the Detroit Health Department.`,
-    author: `IET`,
+    author: `Detroit Open Data Team`,
   },
   pathPrefix: "/restaurant-inspections",
   plugins: [
+    `gatsby-plugin-netlify`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
