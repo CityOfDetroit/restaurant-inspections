@@ -9,7 +9,7 @@ import Establishment from "../components/establishment"
 import SEO from "../components/seo"
 import Citation from "../components/citation"
 
-export default ({ data }) => {
+const EstablishmentPage = ({ data }) => {
   const e = data.postgres.establishment[0]
   const last_updated = data.postgres.maxInspectionDate[0].inspectionDate
 
@@ -113,3 +113,4 @@ export const query = graphql`
     }
   }
 `
+export default EstablishmentPage;
