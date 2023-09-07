@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import { Image, Header } from "semantic-ui-react"
-import PropTypes from "prop-types"
+//import PropTypes from "prop-types"
 import _ from "lodash"
 
 import  logo  from "../images/cod-logo.jpg"
@@ -29,12 +29,12 @@ const SiteHeader = ({ siteTitle }) => (
   </header>
 )
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+/* Header.propTypes = {
+  sitetitle: PropTypes.string,
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
-}
+  sitetitle: ``,
+} */
 
 export default SiteHeader
