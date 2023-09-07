@@ -58,7 +58,7 @@ class Inspection extends Component {
                 {e.violationsByInspectionidList.length} {e.violationsByInspectionidList.length === 1 ? 'violation' : 'violations'} cited {e.violationsByInspectionidList.length > 0 ? ':' : null}
               </Header>
               {e.violationsByInspectionidList.length > 0 ? 
-                <Segment.Group divided='true' verticalAlign='middle'>
+                <Segment.Group divided='true' vertical='middle'>
                   {e.violationsByInspectionidList.map((e, i) => (
                     <Violation data={e} key={i} />
                   ))}
