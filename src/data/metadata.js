@@ -56,18 +56,18 @@ const metadata = {
       },
       "openData": {
         display: "open data",
-        url: "https://data.detroitmi.gov/browse?q=restaurants"
+        url: "https://data.detroitmi.gov/"
       }
     },
 
     "faqs_data": [
       {
         question: "How many restaurants are in Detroit?",
-        answer: "There are approximately 1,900 restaurants operating in Detroit. This includes full service restaurants, faith based establishments, schools, coffee shops, bars, fast food chains, mobile food units, stadiums and casinos. You'll find about 2,300 open and closed establishments inspected by the Detroit Health Department since August 1, 2016."
+        answer: "As of September 2023, there are nearly 4,000 restaurant establishments operating in Detroit. This includes full service restaurants, faith based establishments, schools, coffee shops, bars, fast food chains, mobile food units, stadiums and casinos. In the <a href='https://data.detroitmi.gov/datasets/restaurant-establishments/explore?showTable=true' target='_blank' rel='noopener noreferrer'>complete dataset</a> on the open data portal, you'll find over 6,500 open and closed establishments inspected by the Detroit Health Department since August 1, 2016."
       },
       {
         question: "How many inspections are done?",
-        answer: "The Detroit Health Department conducts 200-400 inspections per month. Approximately 3,500 inspections were conducted in 2018. Establishments are scheduled for routine inspections based on the complexity of their food preparation. See the 'Review frequency' field."
+        answer: "The Detroit Health Department conducts 200-400 inspections per month. Approximately 2,500 inspections were conducted in 2022. Establishments are scheduled for routine inspections based on the complexity of their food preparation. See the 'Review frequency' field. Explore the entire <a href='https://data.detroitmi.gov/datasets/restaurant-establishments/explore?showTable=true' target='_blank' rel='noopener noreferrer'>restaurant inspection dataset</a> to view the data in bulk."
       },
       {
         question: "Are restaurants assigned grades?",
@@ -99,11 +99,11 @@ const metadata = {
       },
       {
         question: "How often is this data updated?",
-        answer: "Restaurant inspections data is updated monthly on the last day of the month and includes data through the last full month. For example, on March 31, the data will be updated to reflect inspections through February 28. This allows food safety inspectors time to verify their reports and follow-up on corrections."
+        answer: "Restaurant inspections data is updated monthly and includes data through the last full month. For example, if the data is updated on March 31, the data will be updated to reflect inspections through February 28. This allows food safety inspectors time to verify their reports and follow-up on corrections."
       },
       {
         question: "How can I access the raw data?",
-        answer: "Restaurant inspections data is made freely available on Detroit's open data portal at data.detroitmi.gov."
+        answer: "Restaurant inspections data is made freely available on Detroit's <a href='https://data.detroitmi.gov/search?q=restaurant' target='_blank' rel='noopener noreferrer'>open data portal</a>."
       }
     ],
 
