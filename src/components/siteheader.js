@@ -29,12 +29,12 @@ const SiteHeader = ({ siteTitle }) => (
   </header>
 )
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+/* Header.propTypes = {
+  sitetitle: PropTypes.string,
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
-}
+  sitetitle: ``,
+} */
 
 export default SiteHeader
