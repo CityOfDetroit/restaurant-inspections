@@ -20,8 +20,8 @@ const Violation = ({ data }) => {
           content={metadata.violations[data.violationType]}
           basic />
         <Label>
-          <Icon name={data.corrected === "True" ? 'check' : data.corrected === "False" ? 'times' : 'ban'} color={data.corrected === "True" ? 'green' : data.corrected === "False" ? 'red' : 'grey'} />
-          {data.corrected === "True" ? `Corrected on ${dayjs(data.correctedDate).format('M-DD-YYYY')}` : data.corrected === "False" ? "Not corrected" : data.corrected === "Not required" ? "Reviewed at next routine inspection" : data.corrected}
+          <Icon name={data.corrected === "true" ? 'check' : data.corrected === "false" ? 'times' : 'ban'} color={data.corrected === "true" ? 'green' : data.corrected === "false" ? 'red' : 'grey'} />
+          {data.corrected === "true" ? `Corrected on ${dayjs(data.correctedDate).format('M-DD-YYYY')}` : data.corrected === "false" ? "Not corrected" : data.corrected === "Not required" ? "Reviewed at next routine inspection" : data.corrected}
         </Label>
       </Item.Extra>
     </Segment>
