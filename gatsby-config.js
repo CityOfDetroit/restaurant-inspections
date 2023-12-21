@@ -37,7 +37,7 @@ module.exports = {
       resolve: `gatsby-source-pg`,
       options: {
         connectionString: process.env.PG_CONN,
-        schema: `public`,
+        schema: `dbt_mart_health_restaurants_app`,
         appendPlugins: [require("postgraphile-plugin-connection-filter")],
       },
     },
