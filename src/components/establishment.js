@@ -3,14 +3,14 @@ import { Table, Popup, Icon } from "semantic-ui-react"
 import metadata from "../data/metadata"
 
 const Establishment = ({ e }) => (
-  <Table basic="very" celled striped compact='very'>
+  <Table basic="very" celled striped compact="very">
     <Table.Body>
       <Table.Row className={e.establishmentStatus === "Open" ? "positive" : ""}>
         <Table.Cell>
           <strong>Status</strong>
         </Table.Cell>
         <Table.Cell>
-          {!e.establishmentStatus ? "Unknown" : e.establishmentStatus}
+          {e.establishmentStatus === "Open" ? "Licensed" : "Not Licensed"}
         </Table.Cell>
       </Table.Row>
       <Table.Row>
@@ -38,7 +38,13 @@ const Establishment = ({ e }) => (
         <Table.Cell>
           {!e.riskCategory ? "Unknown" : e.riskCategory}
           <span style={{ marginLeft: ".5em" }}>
-            <Popup wide size="tiny" trigger={<Icon circular name="question" size="small" color="grey" />}>
+            <Popup
+              wide
+              size="tiny"
+              trigger={
+                <Icon circular name="question" size="small" color="grey" />
+              }
+            >
               {metadata.risks[`${e.riskCategory}`]}
             </Popup>
           </span>
@@ -49,7 +55,9 @@ const Establishment = ({ e }) => (
           <strong>Review frequency</strong>
         </Table.Cell>
         <Table.Cell>
-          {Math.round(e.reviewFrequencyDays) === 0 ? "Unknown" : `Every ${Math.round(e.reviewFrequencyDays)} days`}
+          {Math.round(e.reviewFrequencyDays) === 0
+            ? "Unknown"
+            : `Every ${Math.round(e.reviewFrequencyDays)} days`}
         </Table.Cell>
       </Table.Row>
     </Table.Body>
