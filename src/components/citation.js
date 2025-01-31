@@ -5,7 +5,7 @@ import metadata from "../data/metadata";
 
 const Citation = ({ date }) => (
   <Segment basic size='small' textAlign='right'>
-    Built using <a href={metadata.links.openData.url} target='_blank' rel='noopener noreferrer'>{metadata.links.openData.display}</a> | Site last updated {dayjs(date).add(30, 'day').format('MM-DD-YYYY')} with inspection data thru {dayjs(date).format('MM-DD-YYYY')}.
+    Built using <a href={metadata.links.openData.url} target='_blank' rel='noopener noreferrer'>{metadata.links.openData.display}</a> | Site last updated {dayjs().format('MM-DD-YYYY')} with inspection data thru {dayjs(date).format('MM-DD-YYYY')}.
   </Segment>
 );
 
