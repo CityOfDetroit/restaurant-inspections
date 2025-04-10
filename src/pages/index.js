@@ -20,7 +20,7 @@ const IndexPage = ({ data }) => {
       <section style={{ marginBottom: '1.25em' }}>
         <SearchEstablishments source={data.postgres.establishments} />
       </section>
-      <Citation date={data.postgres.maxInspectionDate[0].inspectionDate} />
+      <Citation date={data.postgres.maxInspectionDate[0].inspectionDate} buildDate={data.currentBuildDate.currentDate} />
     </Layout>
   )
 }
@@ -36,6 +36,9 @@ export const query = graphql`
     maxInspectionDate: allInspectionsList(orderBy: INSPECTION_DATE_DESC, first: 1) {
       inspectionDate
     }
+  }
+  currentBuildDate {
+    currentDate
   }
 }
 `

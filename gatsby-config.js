@@ -12,6 +12,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-netlify`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-source-build-date`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
