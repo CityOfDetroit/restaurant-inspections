@@ -11,7 +11,7 @@ exports.createPages = async ({ graphql, actions: { createPage }}) => {
   {
     postgres {
       establishments: allEstablishmentsList {
-        establishmentid
+        establishmentId
       }
     }
   }
@@ -19,10 +19,10 @@ exports.createPages = async ({ graphql, actions: { createPage }}) => {
 
   res.data.postgres.establishments.forEach(e => {
     createPage({
-      path: `/establishment/${e.establishmentid}`,
+      path: `/establishment/${e.establishmentId}`,
       component: path.resolve('./src/templates/establishment-page.js'),
       context: {
-        eid: e.establishmentid,
+        eid: e.establishmentId,
       },
     })
   })

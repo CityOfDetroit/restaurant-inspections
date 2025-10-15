@@ -8,7 +8,7 @@ const Location = ({ e, encoded }) => (
       <Grid.Column>
         <Header as="h3">
         <a href={`https://www.google.com/maps/@${e.coords.split(",").reverse().join(",")},18z`}>
-          {e.name}
+          {e.establishmentName}
           <Header.Subheader>{e.address}, Detroit, MI, {e.zipcode}</Header.Subheader>
         </a>
         </Header>
@@ -31,10 +31,10 @@ const Location = ({ e, encoded }) => (
           style={{ height: 275, overflowY: "scroll" }}
         >
           {e.nearbyList.map(i => (
-            <List.Item key={i.establishmentid}>
+            <List.Item key={i.establishmentId}>
               <List.Content>
-                <Link to={`/establishment/${i.establishmentid}`}>
-                  <List.Header as='a'>{i.name}</List.Header>
+                <Link to={`/establishment/${i.establishmentId}`}>
+                  <List.Header as='a'>{i.establishmentName}</List.Header>
                   <List.Description style={{ color: 'rgba(0, 0, 0, 0.6)' }}>{i.address}</List.Description>
                 </Link>
               </List.Content>

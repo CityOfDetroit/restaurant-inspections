@@ -17,26 +17,26 @@ const Establishment = ({ e }) => (
         <Table.Cell>
           <strong>License type</strong>
         </Table.Cell>
-        <Table.Cell>{e.licenseType}</Table.Cell>
+        <Table.Cell>{e.establishmentLicenseType}</Table.Cell>
       </Table.Row>
       <Table.Row>
         <Table.Cell>
           <strong>State license number</strong>
         </Table.Cell>
-        <Table.Cell>{e.licenseNumber}</Table.Cell>
+        <Table.Cell>{e.establishmentLicenseNumber}</Table.Cell>
       </Table.Row>
       <Table.Row>
         <Table.Cell>
           <strong>Owner</strong>
         </Table.Cell>
-        <Table.Cell>{e.owner}</Table.Cell>
+        <Table.Cell>{e.establishmentOwner}</Table.Cell>
       </Table.Row>
       <Table.Row>
         <Table.Cell>
           <strong>Complexity level</strong>
         </Table.Cell>
         <Table.Cell>
-          {!e.riskCategory ? "Unknown" : e.riskCategory}
+          {!e.establishmentComplexityLevel ? "Unknown" : e.establishmentComplexityLevel}
           <span style={{ marginLeft: ".5em" }}>
             <Popup
               wide
@@ -45,7 +45,7 @@ const Establishment = ({ e }) => (
                 <Icon circular name="question" size="small" color="grey" />
               }
             >
-              {metadata.risks[`${e.riskCategory}`]}
+              {metadata.risks[`${e.establishmentComplexityLevel}`]}
             </Popup>
           </span>
         </Table.Cell>
@@ -55,9 +55,9 @@ const Establishment = ({ e }) => (
           <strong>Review frequency</strong>
         </Table.Cell>
         <Table.Cell>
-          {Math.round(e.reviewFrequencyDays) === 0
+          {Math.round(e.numReviewFrequency) === 0
             ? "Unknown"
-            : `Every ${Math.round(e.reviewFrequencyDays)} days`}
+            : `Every ${Math.round(e.numReviewFrequency)} days`}
         </Table.Cell>
       </Table.Row>
     </Table.Body>
