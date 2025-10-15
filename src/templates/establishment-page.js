@@ -27,10 +27,10 @@ const EstablishmentPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title={e.name} />
+      <SEO title={e.establishmentName} />
 
       <Header as="h2">
-        {e.name}
+        {e.establishmentName}
         <Header.Subheader>{e.address}</Header.Subheader>
       </Header>
       <Divider />
@@ -40,10 +40,10 @@ const EstablishmentPage = ({ data }) => {
       <Divider />
 
       <Header as="h3">
-        {e.inspectionsByEstablishmentidList.length} Inspections
+        {e.inspectionsByEstablishmentIdList.length} Inspections
         <Header.Subheader>Since 8-1-2016</Header.Subheader>
       </Header>
-      <Inspection data={e.inspectionsByEstablishmentidList} />
+      <Inspection data={e.inspectionsByEstablishmentIdList} />
       <Message visible size="small">
         <Message.Header>About inspections</Message.Header>
         A restaurant is <strong>compliant</strong> <Icon name="check" color="green" /> 
@@ -60,37 +60,37 @@ const EstablishmentPage = ({ data }) => {
 }
 
 export const query = graphql`
-  query($eid: String!) {
+  query($eid: PostGraphile_BigInt!) {
     site {
       pathPrefix
     }
     postgres {
-      establishment: allEstablishmentsList(condition: { establishmentid: $eid }) {
-        establishmentid
-        name
+      establishment: allEstablishmentsList(condition: { establishmentId: $eid }) {
+        establishmentId
+        establishmentName
         address
-        zipcode
-        owner
-        licenseNumber
-        licenseType
+        zipCode
+        establishmentOwner
+        establishmentLicenseNumber
+        establishmentLicenseType
         establishmentType
         establishmentStatus
-        riskCategory
-        reviewFrequencyDays
+        establishmentComplexityLevel
+        numReviewFrequency
         coords
         geojson
         nearbyList(first: 20) {
-          establishmentid
-          name
+          establishmentId
+          establishmentName
           address
-          zipcode
+          zipCode
         }
-        inspectionsByEstablishmentidList(orderBy: INSPECTION_DATE_DESC) {
-          inspectionid
+        inspectionsByEstablishmentIdList(orderBy: INSPECTION_DATE_DESC) {
+          inspectionId
           inspectionDate
           inspectionType
-          inCompliance
-          violationsByInspectionidList(orderBy: VIOLATION_TYPE_DESC) {
+          isInCompliance
+          violationsByInspectionIdList(orderBy: VIOLATION_TYPE_DESC) {
             violationCode
             violationDescription
             violationType
@@ -98,10 +98,10 @@ export const query = graphql`
             subItem
             problemDescription
             subProblem
-            location
+            areaDescription
             subLocation
-            corrected
-            daysToCorrect
+            isCorrected
+            numDaysToCorrect
             correctedDate
             correctionDescription
           }

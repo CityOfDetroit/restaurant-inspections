@@ -5,7 +5,7 @@ create or replace function search_establishments(input text) returns setof estab
 
 create or replace function establishments_nearby(o establishments) returns setof establishments 
   as $$ select e.* from establishments e
-    where o.establishmentid != e.establishmentid
+    where o.establishmentId != e.establishmentId
       and e.geom is not null
       and o.geom is not null
     order by o.geom <-> e.geom asc
@@ -23,7 +23,7 @@ create or replace function establishments_coords(e establishments) returns text
 create or replace function establishments_geojson(e establishments) returns jsonb 
   as $$ select jsonb_build_object(
     'type',       'Feature',
-    'id',         e.establishmentid,
+    'id',         e.establishmentId,
     'geometry',   ST_AsGeoJSON(e.geom)::jsonb,
     'properties', to_jsonb(e) - 'geom'
   ) e

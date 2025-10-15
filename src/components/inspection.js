@@ -31,7 +31,7 @@ class Inspection extends Component {
                 {dayjs(e.inspectionDate).format('MM-DD-YYYY')}
                 <Header.Subheader>
                   {e.inspectionType + ' '}
-                  <Icon name={e.inCompliance === "Yes" ? 'check' : e.inCompliance === "No" ? 'times' : null} color={e.inCompliance === "Yes" ? 'green' : 'red'} />
+                  <Icon name={e.isInCompliance === true ? 'check' : e.isInCompliance === false ? 'times' : null} color={e.isInCompliance === true ? 'green' : 'red'} />
                 </Header.Subheader>
               </Header>
               <Icon name='dropdown' />
@@ -39,15 +39,15 @@ class Inspection extends Component {
             <Accordion.Content active={activeIndex === i}>
               <Table basic='very' celled compact>
                 <Table.Body>
-                  <Table.Row className={e.inCompliance === "Yes" ? 'positive' : e.inCompliance === "No" ? 'negative' : ''}>
+                  <Table.Row className={e.isInCompliance === true ? 'positive' : e.isInCompliance === false ? 'negative' : ''}>
                     <Table.Cell>
                       <strong>Outcome</strong>
                     </Table.Cell>
                     <Table.Cell>
-                      {e.inCompliance === "Yes" ? "Compliant" : e.inCompliance === "No" ? "Not compliant" : e.inCompliance}
+                      {e.isInCompliance === true ? "Compliant" : e.isInCompliance === false ? "Not compliant" : e.isInCompliance}
                       <span style={{ marginLeft: '.5em' }}>
                         <Popup wide size='tiny' trigger={<Icon circular name='question' size='small' color='grey' />}>
-                          {metadata.outcomes[`${e.inCompliance}`]}
+                          {metadata.outcomes[`${e.isInCompliance}`]}
                         </Popup>
                       </span>
                     </Table.Cell>
@@ -55,11 +55,11 @@ class Inspection extends Component {
                 </Table.Body>
               </Table>
               <Header as='h5'>
-                {e.violationsByInspectionidList.length} {e.violationsByInspectionidList.length === 1 ? 'violation' : 'violations'} cited {e.violationsByInspectionidList.length > 0 ? ':' : null}
+                {e.violationsByInspectionIdList.length} {e.violationsByInspectionIdList.length === 1 ? 'violation' : 'violations'} cited {e.violationsByInspectionIdList.length > 0 ? ':' : null}
               </Header>
-              {e.violationsByInspectionidList.length > 0 ? 
+              {e.violationsByInspectionIdList.length > 0 ? 
                 <Segment.Group divided='true' vertical='middle'>
-                  {e.violationsByInspectionidList.map((e, i) => (
+                  {e.violationsByInspectionIdList.map((e, i) => (
                     <Violation data={e} key={i} />
                   ))}
                 </Segment.Group>

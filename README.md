@@ -36,7 +36,7 @@ It translates to this handy GraphQL query:
   searchEstablishments(input: "taqueria") {
     edges {
       node {
-        establishmentid
+        establishmentId
         name
         address
       }

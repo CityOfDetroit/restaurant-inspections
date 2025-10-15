@@ -29,8 +29,8 @@ export const query = graphql`
  query IndexPageQuery {
   postgres {
     establishments: allEstablishmentsList {
-      establishmentid
-      name
+      establishmentId
+      establishmentName
       address
     }
     maxInspectionDate: allInspectionsList(orderBy: INSPECTION_DATE_DESC, first: 1) {
