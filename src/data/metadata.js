@@ -63,11 +63,11 @@ const metadata = {
     "faqs_data": [
       {
         question: "How many restaurants are in Detroit?",
-        answer: "As of September 2023, there are nearly 4,000 restaurant establishments operating in Detroit. This includes full service restaurants, faith based establishments, schools, coffee shops, bars, fast food chains, mobile food units, stadiums and casinos. In the <a href='https://data.detroitmi.gov/datasets/restaurant-establishments/explore?showTable=true' target='_blank' rel='noopener noreferrer'>complete dataset</a> on the open data portal, you'll find over 6,500 open and closed establishments inspected by the Detroit Health Department since August 1, 2016."
+        answer: "As of September 2023, there are nearly 4,000 restaurant establishments operating in Detroit. This includes full service restaurants, faith based establishments, schools, coffee shops, bars, fast food chains, mobile food units, stadiums and casinos. In the <a href='https://data.detroitmi.gov/datasets/detroitmi::restaurant-inspections-2/explore?layer=0' target='_blank' rel='noopener noreferrer'>complete dataset</a> on the open data portal, you'll find over 6,500 open and closed establishments inspected by the Detroit Health Department since August 1, 2016."
       },
       {
         question: "How many inspections are done?",
-        answer: "The Detroit Health Department conducts 200-400 inspections per month. Approximately 2,500 inspections were conducted in 2022. Establishments are scheduled for routine inspections based on the complexity of their food preparation. See the 'Review frequency' field. Explore the entire <a href='https://data.detroitmi.gov/datasets/restaurant-establishments/explore?showTable=true' target='_blank' rel='noopener noreferrer'>restaurant inspection dataset</a> to view the data in bulk."
+        answer: "The Detroit Health Department conducts 200-400 inspections per month. Approximately 2,500 inspections were conducted in 2022. Establishments are scheduled for routine inspections based on the complexity of their food preparation. See the 'Review frequency' field. Explore the entire <a href='https://data.detroitmi.gov/datasets/detroitmi::restaurant-inspections-2/' target='_blank' rel='noopener noreferrer'>restaurant inspection dataset</a> to view the data in bulk."
       },
       {
         question: "Are restaurants assigned grades?",
