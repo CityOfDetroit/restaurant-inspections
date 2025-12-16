@@ -1,11 +1,11 @@
 create or replace function search_establishments(input text) returns setof establishments 
   as $$ select * from establishments
-    where name ilike ('%' || input || '%')
+    where establishment_name ilike ('%' || input || '%')
   $$ language sql stable;
 
 create or replace function establishments_nearby(o establishments) returns setof establishments 
   as $$ select e.* from establishments e
-    where o.establishmentId != e.establishmentId
+    where o.establishment_id != e.establishment_id
       and e.geom is not null
       and o.geom is not null
     order by o.geom <-> e.geom asc
@@ -23,7 +23,7 @@ create or replace function establishments_coords(e establishments) returns text
 create or replace function establishments_geojson(e establishments) returns jsonb 
   as $$ select jsonb_build_object(
     'type',       'Feature',
-    'id',         e.establishmentId,
+    'id',         e.establishment_id,
     'geometry',   ST_AsGeoJSON(e.geom)::jsonb,
     'properties', to_jsonb(e) - 'geom'
   ) e
