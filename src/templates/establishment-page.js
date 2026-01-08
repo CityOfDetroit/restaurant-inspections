@@ -10,8 +10,8 @@ import SEO from "../components/seo"
 import Citation from "../components/citation"
 
 const EstablishmentPage = ({ data }) => {
+  
   const e = data.postgres.establishment[0]
-  const last_updated = data.postgres.maxInspectionDate[0].inspectionDate
 
   // make geojson and encode for use in Mapbox Static API
   let json = {
@@ -54,7 +54,7 @@ const EstablishmentPage = ({ data }) => {
 
       {e.coords ? <><Divider /><Location e={e} encoded={encoded} /></> : ''}
 
-      <Citation date={last_updated} />
+      <Citation />
     </Layout>
   )
 }
@@ -106,9 +106,6 @@ export const query = graphql`
             correctionDescription
           }
         }
-      }
-      maxInspectionDate: allInspectionsList(orderBy: INSPECTION_DATE_DESC, first: 1) {
-        inspectionDate
       }
     }
   }
